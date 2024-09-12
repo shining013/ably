@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const CartPage = () => {
-  return (
-    <div className='text-body5 bg-gray-70'>
-      
-    </div>
-  )
-}
+  return <div className="text-body5 bg-gray-70">ㅇㅇㅇㅇ</div>;
+};
 
-export default CartPage
+export default CartPage;
