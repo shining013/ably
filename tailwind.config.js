@@ -89,6 +89,9 @@ module.exports = {
           70: "#1f1f1f",
         },
       },
+      boxShadow: {
+        "custom-inset": "rgb(238, 238, 238) 0px 1px 0px inset",
+      },
     },
   },
   plugins: [],
