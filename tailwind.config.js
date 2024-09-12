@@ -10,6 +10,50 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        // h1~h5
+        h5: [
+          "18px",
+          { lineHeight: "24px", letterSpacing: "-0.6px", fontWeight: 600 },
+        ],
+        // body1~5
+        body1: [
+          "16px",
+          { lineHeight: "20px", letterSpacing: "-0.4px", fontWeight: 400 },
+        ],
+        body2: [
+          "14px",
+          { lineHeight: "18px", letterSpacing: "-0.4px", fontWeight: 400 },
+        ],
+        body3: [
+          "13px",
+          { lineHeight: "16px", letterSpacing: "-0.2px", fontWeight: 400 },
+        ],
+        body4: [
+          "12px",
+          {
+            lineHeight: "16px",
+            letterSpacing: "-0.2px",
+            fontWeight: 400,
+          },
+        ],
+        body5: ["11px", { lineHeight: "14px", fontWeight: 400 }],
+        body6: ["10px", { lineHeight: "14px", fontWeight: 400 }],
+        // subtitle1~5
+        subtitle1: [
+          "16px",
+          { lineHeight: "20px", letterSpacing: "-0.4px", fontWeight: 600 },
+        ],
+        subtitle2: [
+          "14px",
+          { lineHeight: "18px", letterSpacing: "-0.4px", fontWeight: 600 },
+        ],
+        subtitle4: [
+          "12px",
+          { lineHeight: "16px", letterSpacing: "-0.2px", fontWeight: 600 },
+        ],
+        subtitle6: ["10px", { lineHeight: "14px", fontWeight: 600 }],
+      },
       colors: {
         pink: {
           5: "#ffeff2",
