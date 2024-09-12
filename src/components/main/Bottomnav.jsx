@@ -2,7 +2,7 @@ import React from "react";
 
 const Bottombar = () => {
   return (
-    <nav className="w-[600px] mx-auto h-12 flex justify-center bottom-0 left-0 right-0 bg-white sticky shadow-custom-inset">
+    <nav className="w-full mx-auto h-12 flex justify-center bottom-0 left-0 right-0 bg-white sticky shadow-custom-inset">
       <div className="w-1/4 h-6 py-1 flex-col justify-center items-center">
         <img
           src="./images/bottomNav1.svg"
