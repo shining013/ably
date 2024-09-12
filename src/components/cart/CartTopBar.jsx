@@ -1,9 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronLeft,
-  faHouse,
-  faUser,
+  faChevronLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 function CartTopBar() {
