@@ -3,7 +3,10 @@ import logo from "../assets/images/logo.svg";
 
 const TopInfo = () => {
   return (
-    <div className="bg-pink-30 text-white content-center text-body3 py-3 px-2.5 flex justify-between fixed w-full">
+    <div
+      className="bg-pink-30 text-white content-center text-body3 py-3 px-2.5 flex justify-between fixed"
+      style={{ width: "100%", maxWidth: "600px" }}
+    >
       <div className="flex flex-row gap-2 items-center">
         <img src={logo} alt="ABLY" />
         <div className="text-body3 text-white">
