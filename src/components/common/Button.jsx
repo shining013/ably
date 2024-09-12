@@ -13,7 +13,11 @@ const Button = ({ text, width, option }) => {
   // 버튼 기본 설정
   let btnClassName =
     "w-full py-4 flex justify-center itmes-center cursor-pointer font-semibold";
-  const btnWidth = width + "px";
+  let btnWidth = "";
+
+  typeof width === undefined
+    ? (btnWidth = "w-full")
+    : (btnWidth = width + "px");
 
   typeof option === "number"
     ? (btnClassName = btnClassName + buttonOption[option])
