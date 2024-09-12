@@ -2,7 +2,7 @@ import React from 'react'
 
 const CartPage = () => {
   return (
-    <div>
+    <div className='text-body5 bg-gray-70'>
       
     </div>
   )
