@@ -1,12 +1,14 @@
 import React from "react";
 import CardList from "../components/common/CardList";
-import Bottombar from "../components/main/Bottomnav";
+import CateList from "../components/CateList";
+import BottomBar from "../components/main/Bottomnav";
 
 const MainPage = () => {
   return (
     <div>
+      <CateList />
       <CardList />
-      <Bottombar />
+      <BottomBar />
     </div>
   );
 };

@@ -92,6 +92,18 @@ module.exports = {
       boxShadow: {
         "custom-inset": "rgb(238, 238, 238) 0px 1px 0px inset",
       },
+      height: {
+        140: "140px",
+        34: "34px",
+        58: "58px",
+        14: "14px",
+      },
+      width: {
+        34: "34px",
+        62: "62px",
+        38: "38px",
+        29: "29px",
+      },
     },
   },
   plugins: [],
