@@ -1,33 +1,62 @@
 import React from "react";
 
 // text : 버튼 내용
-// width : 버튼 길이(px)
-// option : 등록된 buttonOption의 인덱스 or 직접 tailwind 설정
-const Button = ({ text, width, option }) => {
-  const buttonOption = [
-    " bg-black text-white h-14 rounded-lg text-lg", //0. 구매하기
-    " bg-white h-14 rounded-lg border border-gray-300 text-lg", //1. 옵션 선택 닫기
-    " bg-white h-13 rounded px-3 border border-blue-200 text-blue-500 text-sm", //2. 상세페이지 버튼
-  ];
+// option : 등록된 button or tailwind 설정
+// style : style 설정
+const Button = ({ text, option, style }) => {
+  let btnText = text;
+  const buttonOption = {
+    blackType:
+      " w-full py-4 font-semibold bg-black text-white h-14 rounded-lg text-lg",
 
-  // 버튼 기본 설정
-  let btnClassName =
-    "w-full py-4 flex justify-center itmes-center cursor-pointer font-semibold";
-  let btnWidth = "";
+    whiteType:
+      " w-full py-4 font-semibold bg-white h-14 rounded-lg border border-gray-300 text-lg",
 
-  typeof width === undefined
-    ? (btnWidth = "w-full")
-    : (btnWidth = width + "px");
+    blueType:
+      " w-full py-4 font-semibold bg-white h-13 rounded px-3 border border-blue-200 text-blue-500 text-sm",
 
-  typeof option === "number"
-    ? (btnClassName = btnClassName + buttonOption[option])
-    : (btnClassName = btnClassName + " " + option);
+    //상세 보기 페이지 우하단 버튼
+    arrowType1: [
+      " bg-white p-0 w-8 h-8 rounded-full border border-gray-200 shadow-md",
+    ],
+
+    arrowType2: [
+      " bg-white pt-1 w-8 h-8 rounded-full border border-gray-200 shadow-md",
+    ],
+  };
+
+  // 버튼 기본
+  let btnClassName = "flex justify-center itmes-center cursor-pointer";
+
+  if (buttonOption[option]) {
+    btnClassName = btnClassName + buttonOption[option];
+    if (option === "arrowType1") {
+      btnText = "↑";
+    }
+    if (option === "arrowType2") {
+      btnText = "↓";
+    }
+  } else {
+    btnClassName = btnClassName + " " + option;
+  }
+  console.log(btnText);
 
   return (
-    <div style={{ width: btnWidth }}>
-      <button className={btnClassName}>{text}</button>
-    </div>
+    <button className={btnClassName} style={style}>
+      {btnText}
+    </button>
   );
 };
 
 export default Button;
+
+// 사용예시
+// <Button
+//  text={"3가지 사용하기"}
+//  option={"blackType"}
+//  style={{ width: "400px" }}
+// />
+
+// <Button text={"옵션선택"} option={"whiteType"} />
+
+// <Button option={"arrowType2"} />
