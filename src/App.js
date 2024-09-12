@@ -1,8 +1,14 @@
 import React from "react";
 import Router from "./Router";
+import TopInfo from "./components/common/TopInfo";
 
 const App = () => {
-  return <Router />;
+  return (
+    <>
+      <TopInfo />
+      <Router />
+    </>
+  );
 };
 
 export default App;

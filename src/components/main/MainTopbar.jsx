@@ -1,7 +1,7 @@
 import React from "react";
 
 const MainTopbar = () => {
-  return <div style={{ backgroundColor: "black" }}>dsdf</div>;
+  return <div>main top bar</div>;
 };
 
 export default MainTopbar;

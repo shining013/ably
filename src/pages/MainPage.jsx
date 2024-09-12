@@ -1,12 +1,7 @@
 import React from "react";
-import MainTopbar from "../components/main/MainTopbar";
 
 const MainPage = () => {
-  return (
-    <div>
-      <MainTopbar />
-    </div>
-  );
+  return <div>main</div>;
 };
 
 export default MainPage;
