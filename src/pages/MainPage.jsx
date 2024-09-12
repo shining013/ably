@@ -5,7 +5,6 @@ const MainPage = () => {
   return (
     <div>
       <CardList />
-      dddddd dddd
     </div>
   );
 };
