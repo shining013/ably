@@ -1,6 +1,6 @@
 import React from "react";
-import Router from "./Router";
-import TopInfo from "./components/common/TopInfo";
+import Router from "src/Router";
+import TopInfo from "src/components/common/TopInfo.jsx";
 
 const App = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/logo.svg";
+import logo from "src/assets/images/logo.svg";
 
 const TopInfo = () => {
   return (
