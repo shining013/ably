@@ -1,7 +1,11 @@
 import React from "react";
 
-function CartSelectBar() {
-  return <div>CartSelectBar</div>;
+function CartSelectBar({ itemTotal, itemSelect }) {
+  return (
+    <input type="checkbox">
+      전체 선택({itemSelect}/{itemTotal})
+    </input>
+  );
 }
 
 export default CartSelectBar;
