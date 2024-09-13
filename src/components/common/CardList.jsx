@@ -11,6 +11,7 @@ const CardList = () => {
           name: "베이델리",
           description:
             "[얼리어텀🍂][벨리드made/6color]데이 라운드 펜던트 가디건",
+          salesCount: 1324,
         })
         .map((item) => (
           <Card
@@ -18,6 +19,7 @@ const CardList = () => {
             price={item.price}
             name={item.name}
             description={item.description}
+            salesCount={item.salesCount}
           />
         ))}
     </div>
