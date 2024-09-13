@@ -20,7 +20,7 @@ const StoreInfo = ({ storeName, storeNickname, satisfication, starsNum }) => {
         </div>
       </div>
       <div className="flex flex-col">
-        <img src={startEmptyIcon} alt="즐겨찾기off" />
+        <img src={startEmptyIcon} alt="star-icon" />
         <div className="text-body3 text-pink-30">{starsNum}</div>
       </div>
     </div>

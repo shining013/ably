@@ -3,6 +3,7 @@ import TopNavbar from "src/components/common/TopNavbar";
 import StoreInfo from "src/components/product/StoreInfo";
 import ProductInfo from "src/components/product/ProductInfo";
 import DelieveryInfo from "src/components/product/DelieveryInfo";
+import BottomBar from "src/components/product/BottomBar";
 
 const ProductInfoPage = () => {
   return (
@@ -24,6 +25,7 @@ const ProductInfoPage = () => {
         />
         <hr />
         <DelieveryInfo />
+        <BottomBar />
       </div>
     </>
   );
