@@ -4,7 +4,7 @@ import { WidthProvider } from "react-grid-layout";
 function CateList() {
   return (
     <div
-      className="grid grid-rows-2 grid-cols-5 p-2 justify-items-center w-full items-center gap-x-2"
+      className="grid grid-cols-5 p-2 justify-items-center w-full items-center gap-x-2"
       style={{ height: "140px" }}
     >
       <div style={{ width: "62px", height: "58px" }}>
