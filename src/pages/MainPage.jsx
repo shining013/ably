@@ -1,11 +1,11 @@
 import React from "react";
 import CardList from "../components/common/CardList";
-import CateList from "../components/CateList";
+import CateList from "../components/main/CateList";
 import BottomBar from "../components/main/Bottomnav";
 
 const MainPage = () => {
   return (
-    <div>
+    <div className="my-0">
       <CateList />
       <CardList />
       <BottomBar />
