@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import CartTopBar from "../components/cart/CartTopBar";
+import CartSelectBar from "../components/cart/CartSelectBar";
+import CartEmpty from "../components/cart/CartEmpty";
 
 const CartPage = () => {
-  return <div className="text-body5 bg-gray-70">ㅇㅇㅇㅇ</div>;
+  const [itemlist, setItemlist] = useState([])
+
+  return (
+    <div>
+      <CartTopBar />
+      {
+        itemlist.length ? <CartSelectBar /> : <CartEmpty />
+      }
+    </div>
+  );
 };
 
 export default CartPage;
