@@ -4,14 +4,12 @@ import CartSelectBar from "../components/cart/CartSelectBar";
 import CartEmpty from "../components/cart/CartEmpty";
 
 const CartPage = () => {
-  const [itemlist, setItemlist] = useState([])
+  const [itemlist, setItemlist] = useState([]);
 
   return (
-    <div>
+    <div className="relative">
       <CartTopBar />
-      {
-        itemlist.length ? <CartSelectBar /> : <CartEmpty />
-      }
+      {itemlist.length ? <CartSelectBar /> : <CartEmpty />}
     </div>
   );
 };
