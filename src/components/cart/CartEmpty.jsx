@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const CartEmpty = () => {
   return (
@@ -24,15 +25,17 @@ const CartEmpty = () => {
         </p>
       </div>
       <div className="w-full flex justify-center mt-4">
-        <Button
-          text={"상품 보러가기"}
-          option={"blackType"}
-          style={{
-            background: "#ff5160",
-            width: "fit-content",
-            "min-width": "240px",
-          }}
-        />
+        <Link to="/">
+          <Button
+            text={"상품 보러가기"}
+            option={"blackType"}
+            style={{
+              background: "#ff5160",
+              width: "fit-content",
+              "min-width": "240px",
+            }}
+          />
+        </Link>
       </div>
     </div>
   );
