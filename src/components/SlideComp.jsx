@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 
 function SlideComp() {
   return (
-    <>
+    <div className="relative">
       <Swiper
         pagination={{
           type: "fraction",
@@ -90,11 +90,9 @@ function SlideComp() {
         </SwiperSlide>
       </Swiper>
       <div
-        className="prev absolute w-10 h-10"
+        className="prev absolute flex w-10 h-10 top-1/2 -translate-y-2/4 z-10 justify-center items-center left-0"
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.4)",
-          top: "50%",
-          transform: "translateY(-50%)",
         }}
       >
         <svg
@@ -115,9 +113,8 @@ function SlideComp() {
         </svg>
       </div>
       <div
-        className="next absolute w-10 h-10"
+        className="next absolute flex w-10 h-10 top-1/2 -translate-y-2/4 rotate-180 z-10 justify-center items-center right-0"
         style={{
-          transform: "rotate(180deg)",
           backgroundColor: "rgba(0, 0, 0, 0.4)",
         }}
       >
@@ -138,7 +135,7 @@ function SlideComp() {
           ></path>
         </svg>
       </div>
-    </>
+    </div>
   );
 }
 
