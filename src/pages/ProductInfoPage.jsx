@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import TopNavbar from "../components/common/TopNavbar";
 
 const ProductInfoPage = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <TopNavbar title={"상품정보"} />
+    </>
+  );
+};
 
-export default ProductInfoPage
+export default ProductInfoPage;
