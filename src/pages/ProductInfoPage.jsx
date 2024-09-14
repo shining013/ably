@@ -4,6 +4,7 @@ import StoreInfo from "src/components/product/StoreInfo";
 import ProductInfo from "src/components/product/ProductInfo";
 import DelieveryInfo from "src/components/product/DelieveryInfo";
 import BottomBar from "src/components/product/BottomBar";
+import ReviewSection from "src/components/product/ReviewSection";
 
 const ProductInfoPage = () => {
   return (
@@ -24,6 +25,7 @@ const ProductInfoPage = () => {
           price={158000}
         />
         <hr />
+        <ReviewSection />
         <DelieveryInfo />
       </div>
       <BottomBar />

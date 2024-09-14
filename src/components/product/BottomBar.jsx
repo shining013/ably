@@ -10,7 +10,7 @@ const BottomBar = () => {
     <>
       <div className="fixed bottom-0 w-full items-center justify-center max-w-[600px]">
         <hr />
-        <div className="text-center py-2">
+        <div className="text-center py-2 bg-white">
           1명이 이 상품을 구매하는 중이에요
         </div>
         <hr />
