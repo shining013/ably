@@ -34,8 +34,12 @@ const SelectDrawer = ({ open, onClose }) => {
       </div>
 
       <div className="py-3 px-2 flex justify-between border-y border-y-gray-30">
-        <div>2개 선택</div>
-        <div>총 47,000원</div>
+        <div className="text-body2 text-gray-70">
+          <strong>2</strong>개 선택
+        </div>
+        <div className="text-body1 text-gray-70 items-center flex flex-row gap-1">
+          총<span className="text-h4 text-pink-30">47,000원</span>
+        </div>
       </div>
       <div className="flex flex-row gap-2 py-3">
         <Button

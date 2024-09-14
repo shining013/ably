@@ -20,6 +20,10 @@ export default withMT({
     extend: {
       fontSize: {
         // h1~h5
+        h4: [
+          "20px",
+          { lineHeight: "24px", letterSpacing: "-0.6px", fontWeight: 600 },
+        ],
         h5: [
           "18px",
           { lineHeight: "24px", letterSpacing: "-0.6px", fontWeight: 600 },
