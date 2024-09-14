@@ -26,7 +26,10 @@ const ProductInfoPage = () => {
           price={158000}
         />
         <hr />
+        <br />
+        <hr className="h-2 bg-gray-20" />
         <ReviewSection />
+        <hr className="h-2 bg-gray-20" />
         <DeliveryInfo />
         <DetailMenuTab />
       </div>
