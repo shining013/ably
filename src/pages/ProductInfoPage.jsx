@@ -25,8 +25,8 @@ const ProductInfoPage = () => {
         />
         <hr />
         <DelieveryInfo />
-        <BottomBar />
       </div>
+      <BottomBar />
     </>
   );
 };
