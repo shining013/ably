@@ -33,7 +33,7 @@ const SelectDrawer = ({ open, onClose }) => {
         />
       </div>
 
-      <div className="py-3 px-2 flex justify-between border-y border-y-gray-30">
+      <div className="py-3 px-2 flex justify-between border-y border-y-gray-30 items-center">
         <div className="text-body2 text-gray-70">
           <strong>2</strong>개 선택
         </div>
