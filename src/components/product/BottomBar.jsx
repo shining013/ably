@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "src/components/common/Button";
 import heartIcon from "src/assets/icons/heart.svg";
-import { Drawer } from "@material-tailwind/react";
+import SelectDrawer from "./SelectDrawer";
 
 const BottomBar = () => {
   const [open, setOpen] = useState(false);
@@ -27,13 +27,7 @@ const BottomBar = () => {
           />
         </div>
       </div>
-      <Drawer
-        open={open}
-        onClose={() => setOpen(false)}
-        placement="bottom"
-        size={600}
-        className="w-full !max-w-[600px] !mx-auto left-auto !rounded-t-md"
-      ></Drawer>
+      <SelectDrawer open={open} onClose={() => setOpen(false)} />
     </>
   );
 };
