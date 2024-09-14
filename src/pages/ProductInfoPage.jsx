@@ -6,6 +6,7 @@ import DeliveryInfo from "src/components/product/DeliveryInfo";
 import BottomBar from "src/components/product/BottomBar";
 import ReviewSection from "src/components/product/ReviewSection";
 import DetailMenuTab from "src/components/product/DetailMenuTab";
+import RecommendSection from "src/components/product/RecommendSection";
 
 const ProductInfoPage = () => {
   return (
@@ -32,6 +33,17 @@ const ProductInfoPage = () => {
         <hr className="h-2 bg-gray-20" />
         <DeliveryInfo />
         <DetailMenuTab />
+
+        {/* 추천 상품 리스트 */}
+        <br />
+        <hr className="bg-gray-30" />
+        <RecommendSection title={"이 상품들은 어때요?"} />
+        <br />
+        <hr className="bg-gray-30" />
+        <RecommendSection title={"비슷한 상품들이에요"} />
+        <br />
+        <hr className="bg-gray-30" />
+        <RecommendSection title={"이 마켓의 다른 상품들이에요"} />
       </div>
       <BottomBar />
     </>
