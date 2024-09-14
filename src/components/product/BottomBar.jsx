@@ -8,9 +8,9 @@ const BottomBar = () => {
 
   return (
     <>
-      <div className="fixed bottom-0 w-full items-center justify-center max-w-[600px]">
+      <div className="fixed bottom-0 w-full items-center justify-center max-w-[600px] bg-white">
         <hr />
-        <div className="text-center py-2 bg-white">
+        <div className="text-center py-2">
           1명이 이 상품을 구매하는 중이에요
         </div>
         <hr />

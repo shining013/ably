@@ -5,12 +5,13 @@ import ProductInfo from "src/components/product/ProductInfo";
 import DeliveryInfo from "src/components/product/DeliveryInfo";
 import BottomBar from "src/components/product/BottomBar";
 import ReviewSection from "src/components/product/ReviewSection";
+import DetailMenuTab from "src/components/product/DetailMenuTab";
 
 const ProductInfoPage = () => {
   return (
     <>
       <TopNavbar title="Ddd" />
-      <div style={{ paddingTop: "120px" }}>
+      <div className="py-[120px]">
         <StoreInfo
           storeName={"스틸에디션"}
           storeNickname={"반지 맛집"}
@@ -27,6 +28,7 @@ const ProductInfoPage = () => {
         <hr />
         <ReviewSection />
         <DeliveryInfo />
+        <DetailMenuTab />
       </div>
       <BottomBar />
     </>
