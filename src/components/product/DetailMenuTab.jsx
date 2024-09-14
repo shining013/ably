@@ -4,7 +4,7 @@ const DetailMenuTab = () => {
   const [activeTab, setActiveTab] = useState("info"); // 기본 탭은 '상품정보'
 
   return (
-    <div className="grid grid-cols-3 border-gray-70 w-full">
+    <div className="grid grid-cols-3 border-b border-b-gray-30 w-full">
       {/* 상품정보 탭 */}
       <div
         className={`text-center cursor-pointer py-4 relative ${
