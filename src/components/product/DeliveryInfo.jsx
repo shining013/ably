@@ -1,7 +1,7 @@
 import React from "react";
-import delieveryIcon from "src/assets/icons/delievery.svg";
+import deliveryIcon from "src/assets/icons/delivery.svg";
 
-const DelieveryInfo = () => {
+const DeliveryInfo = () => {
   return (
     <div className="flex flex-col py-6 px-4">
       <div className="flex flex-col gap-1 mb-5">
@@ -22,7 +22,7 @@ const DelieveryInfo = () => {
         </div>
       </div>
       <div className="flex flex-row rounded-md px-4 py-2 bg-gray-10 items-center gap-2">
-        <img src={delieveryIcon} alt="배달아이콘" />
+        <img src={deliveryIcon} alt="배달아이콘" />
         <div className="text-slate-60 text-body2">
           에이블리는 365일
           <span className="text-subtitle2"> 전-상품 무료 배송 !</span>
@@ -32,4 +32,4 @@ const DelieveryInfo = () => {
   );
 };
 
-export default DelieveryInfo;
+export default DeliveryInfo;

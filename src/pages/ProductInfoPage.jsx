@@ -2,7 +2,7 @@ import React from "react";
 import TopNavbar from "src/components/common/TopNavbar";
 import StoreInfo from "src/components/product/StoreInfo";
 import ProductInfo from "src/components/product/ProductInfo";
-import DelieveryInfo from "src/components/product/DelieveryInfo";
+import DeliveryInfo from "src/components/product/DeliveryInfo";
 import BottomBar from "src/components/product/BottomBar";
 import ReviewSection from "src/components/product/ReviewSection";
 
@@ -26,7 +26,7 @@ const ProductInfoPage = () => {
         />
         <hr />
         <ReviewSection />
-        <DelieveryInfo />
+        <DeliveryInfo />
       </div>
       <BottomBar />
     </>
