@@ -56,6 +56,10 @@ export default withMT({
           "14px",
           { lineHeight: "18px", letterSpacing: "-0.4px", fontWeight: 600 },
         ],
+        subtitle3: [
+          "13px",
+          { lineHeight: "16px", letterSpacing: "-0.2px", fontWeight: 600 },
+        ],
         subtitle4: [
           "12px",
           { lineHeight: "16px", letterSpacing: "-0.2px", fontWeight: 600 },
