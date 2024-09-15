@@ -22,6 +22,7 @@ function CategoryList() {
     columnGap: "6px",
     position: "relative",
   };
+
   return (
     <div
       className="grid grid-cols-5 box-border cursor-auto p-2  grid-rows-2 justify-items-center w-full place-items-center items-center overflow-x-scroll gap-x-2 gap-y-2"
@@ -62,8 +63,11 @@ function CategoryList() {
                 borderRadius: "5px",
                 background: "rgb(31, 31, 31)",
                 pointerEvents: "none",
+                display: "flex",
+                flexDirection: "column",
               }}
-            ></div>
+            >
+            </div>
           </div>
         </div>
       ))}
