@@ -3,6 +3,7 @@ import Button from "src/components/common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
+
 const CartEmpty = () => {
   return (
     <div
@@ -33,6 +34,7 @@ const CartEmpty = () => {
             "min-width": "240px",
           }}
         />
+        </Link>
       </div>
     </div>
   );
