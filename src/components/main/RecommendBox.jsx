@@ -14,7 +14,23 @@ function RecommendBox() {
           }}
         ></div>
       </div>
-      <div>추천상품 </div>
+      <div
+        className="flex items-center justify-between"
+        style={{ padding: "24px 16px" }}
+      >
+        <p className="overflow-hidden m-0 text-h5">회원님을 위한 추천 상품</p>
+        <p
+          className="font-normal"
+          style={{
+            letterSpacing: "-.4px",
+            lineHeight: "18px",
+            fontSize: "14px",
+            fontWeight: "400",
+          }}
+        >
+          <span style={{ color: "#dddddd" }}>sponsored</span>
+        </p>
+      </div>
     </div>
   );
 }
