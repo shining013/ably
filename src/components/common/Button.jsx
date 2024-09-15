@@ -3,7 +3,7 @@ import React from "react";
 // text : 버튼 내용
 // option : 등록된 button or tailwind 설정
 // style : style 설정
-const Button = ({ text, option, style }) => {
+const Button = ({ text, option, style, onClick }) => {
   let btnText = text;
   const buttonOption = {
     blackType:
@@ -39,10 +39,9 @@ const Button = ({ text, option, style }) => {
   } else {
     btnClassName = btnClassName + " " + option;
   }
-  console.log(btnText);
 
   return (
-    <button className={btnClassName} style={style}>
+    <button className={btnClassName} style={style} onClick={onClick}>
       {btnText}
     </button>
   );

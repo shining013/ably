@@ -1,5 +1,13 @@
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+/** @type {import('tailwindcss').Config} */
+
+import withMT from "@material-tailwind/react/utils/withMT";
+
+export default withMT({
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     container: {
       screens: {
@@ -12,6 +20,10 @@ module.exports = {
     extend: {
       fontSize: {
         // h1~h5
+        h4: [
+          "20px",
+          { lineHeight: "24px", letterSpacing: "-0.6px", fontWeight: 600 },
+        ],
         h5: [
           "18px",
           { lineHeight: "24px", letterSpacing: "-0.6px", fontWeight: 600 },
@@ -47,6 +59,10 @@ module.exports = {
         subtitle2: [
           "14px",
           { lineHeight: "18px", letterSpacing: "-0.4px", fontWeight: 600 },
+        ],
+        subtitle3: [
+          "13px",
+          { lineHeight: "16px", letterSpacing: "-0.2px", fontWeight: 600 },
         ],
         subtitle4: [
           "12px",
@@ -92,4 +108,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+});
