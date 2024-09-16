@@ -6,6 +6,7 @@ import BottomBar from "src/components/main/Bottomnav";
 import TopInfo from "src/components/common/TopInfo";
 import CategoryList from "src/components/main/CategoryList";
 import SearchBar from "src/components/main/SearchBar";
+import Footer from "src/components/main/Footer";
 
 const MainPage = () => {
   return (
@@ -26,6 +27,7 @@ const MainPage = () => {
           <CategoryList />
           <RecommendBox />
           <CardList />
+          <Footer />
           <BottomBar />
         </div>
       </div>
