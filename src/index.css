@@ -24,6 +24,7 @@ button {
 }
 
 body {
+  overflow-y: scroll;
   margin: 0 auto;
   padding: 0;
   min-width: 500px;

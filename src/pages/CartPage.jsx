@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CartTopBar from "../components/cart/CartTopBar";
-import CartSelectBar from "../components/cart/CartSelectBar";
-import CartEmpty from "../components/cart/CartEmpty";
-import CartItem from "../components/cart/CartItem";
+import CartTopBar from "src/components/cart/CartTopBar";
+import CartSelectBar from "src/components/cart/CartSelectBar";
+import CartEmpty from "src/components/cart/CartEmpty";
+import CartItem from "src/components/cart/CartItem";
 
 const CartPage = () => {
   const [itemlist, setItemlist] = useState(["hi", "hello", "bye"]);

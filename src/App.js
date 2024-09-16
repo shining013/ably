@@ -1,13 +1,12 @@
+import { ThemeProvider } from "@material-tailwind/react";
 import React from "react";
-import Router from "./Router";
-import TopInfo from "./components/common/TopInfo";
+import Router from "src/Router";
 
 const App = () => {
   return (
-    <>
-      <TopInfo />
+    <ThemeProvider>
       <Router />
-    </>
+    </ThemeProvider>
   );
 };
 
