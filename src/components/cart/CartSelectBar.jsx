@@ -3,7 +3,7 @@ import React from "react";
 function CartSelectBar({ totalItem, selectItem }) {
   return (
     <div
-      className="sticky w-full h-16 flex justify-between items-center border-b"
+      className="relative sticky w-full h-16 flex justify-between items-center border-b bg-white"
       style={{ top: "102px", padding: "18px 16px" }}
     >
       <div className="flex items-center">

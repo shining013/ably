@@ -5,8 +5,8 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 function CartTopBar({ title }) {
   return (
     <div
-      className="w-full h-11 fixed flex justify-center items-center"
-      style={{ top: "60px", "max-width": "600px" }}
+      className="w-full h-11 relative flex justify-center items-center bg-white"
+      style={{ "max-width": "600px" }}
     >
       <div className="w-11 h-full p-3 absolute top-0 left-0 flex justify-center items-center">
         <FontAwesomeIcon icon={faChevronLeft} className="h-full" />

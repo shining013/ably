@@ -26,7 +26,7 @@ const Button = ({ text, option, style, onClick }) => {
   };
 
   // 버튼 기본
-  let btnClassName = "flex justify-center itmes-center cursor-pointer";
+  let btnClassName = "flex justify-center items-center cursor-pointer";
 
   if (buttonOption[option]) {
     btnClassName = btnClassName + buttonOption[option];
