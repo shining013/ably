@@ -5,16 +5,21 @@ function CategoryList() {
   const navigation = useNavigate();
 
   const categories = [
-    { id: 1, name: "남자패션", imageSrc: "/images/Cate1.png" },
-    { id: 2, name: "의류", imageSrc: "/images/Cate2.png" },
-    { id: 3, name: "jewelry", imageSrc: "/images/Cate3.png" },
-    { id: 4, name: "패션소품", imageSrc: "/images/Cate4.png" },
-    { id: 5, name: "빅사이즈", imageSrc: "/images/Cate5.png" },
-    { id: 6, name: "신발", imageSrc: "/images/Cate6.png" },
-    { id: 7, name: "디지털/핸드폰", imageSrc: "/images/Cate7.png" },
-    { id: 8, name: "가방", imageSrc: "/images/Cate8.png" },
-    { id: 9, name: "뷰티", imageSrc: "/images/Cate9.png" },
-    { id: 10, name: "라이프", imageSrc: "/images/Cate10.png" },
+    { id: 1, name: "남자패션", imageSrc: "/images/Cate1.png", path: "fashion" },
+    { id: 2, name: "의류", imageSrc: "/images/Cate2.png", path: "clothes" },
+    { id: 3, name: "주얼리", imageSrc: "/images/Cate3.png", path: "jewelry" },
+    { id: 4, name: "패션소품", imageSrc: "/images/Cate4.png", path: "props" },
+    { id: 5, name: "빅사이즈", imageSrc: "/images/Cate5.png", path: "big" },
+    { id: 6, name: "신발", imageSrc: "/images/Cate6.png", path: "shoes" },
+    {
+      id: 7,
+      name: "디지털/핸드폰",
+      imageSrc: "/images/Cate7.png",
+      path: "digital",
+    },
+    { id: 8, name: "가방", imageSrc: "/images/Cate8.png", path: "bags" },
+    { id: 9, name: "뷰티", imageSrc: "/images/Cate9.png", path: "beauty" },
+    { id: 10, name: "라이프", imageSrc: "/images/Cate10.png", path: "life" },
   ];
 
   const testStyle = {
@@ -40,7 +45,7 @@ function CategoryList() {
             <div
               className="block gap-x-1 "
               style={{ maxWidth: "34px", maxHeight: "34px", gap: "6px" }}
-              onClick={() => navigation(`/${item.name}`)}
+              onClick={() => navigation(`/${item.path}`)}
             >
               <img
                 className="object-fill justify-items-center"
