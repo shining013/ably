@@ -1,16 +1,148 @@
 const products = [
   {
-    id: 3342,
-    name: "23423",
+    //귀걸이
+
+    id: 100,
+    name: "14K 레이어드 피어싱 105종 모음전",
     primeCategory: "jwerly",
     subCategory: "earing",
     description: "234",
-    price: 123,
-    discount: 10,
-    companyId: 3342,
-    companyName: "22sdfsd3",
-    imgSrc: "ddd",
-    totalSales: 3342,
+    price: 27800,
+    discount: 71,
+    companyId: 1001,
+    companyName: "회사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/QspnSsWwFpk/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjIxMjA3XzE2NzAzODE2NjU3MzE0OTZtLmpwZw",
+    totalSales: 756,
+  },
+  {
+    id: 101,
+    name: "러블리 하트 귀걸이",
+    primeCategory: "jwerly",
+    subCategory: "earing",
+    description: "234",
+    price: 28800,
+    discount: 30,
+    companyId: 1002,
+    companyName: "회사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/CQX3Eu_3irg/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE2XzE3MjY0OTYwOTI2MTk1NDJtLmpwZw",
+    totalSales: 5948,
+  },
+  {
+    id: 102,
+    name: "유리알 귀걸이",
+    primeCategory: "jwerly",
+    subCategory: "earing",
+    description: "234",
+    price: 27800,
+    discount: 71,
+    companyId: 1003,
+    companyName: "회사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/o02dyzgxEGY/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE2XzE3MjY0OTU5NTQ5MjgyNzFtLmpwZw",
+    totalSales: 346,
+  },
+  {
+    id: 103,
+    name: "하트큐빅 귀걸이",
+    primeCategory: "jwerly",
+    subCategory: "earing",
+    description: "234",
+    price: 27800,
+    discount: 71,
+    companyId: 1001,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/V_UGWhHjEOg/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwMTEzXzE3MDUxMTE5Mjc1NDUzNzZtLmpwZw",
+
+    totalSales: 8549,
+  },
+  {
+    id: 104,
+    name: "원터치 링 귀걸이",
+    primeCategory: "jwerly",
+    subCategory: "earing",
+    description: "234",
+    price: 27800,
+    discount: 71,
+    companyId: 1002,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/aY4fDrOyk9c/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzRiZTE0ZDc2M2ZhYTlmZDRkNzAzYWFiNmQyN2JkZTgxLmpwZw",
+    totalSales: 5946,
+  },
+
+  //목걸이
+  {
+    id: 200,
+    name: "스완목걸이",
+    primeCategory: "jwerly",
+    subCategory: "necklace",
+    description: "234",
+    price: 15000,
+    discount: 50,
+    companyId: 1001,
+    companyName: "회사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/zJ-zReUjSVk/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzL2IxNGNlYTBmZDUwNTU3ODAwMzgxMDUxZWZjNTZhZmUxLmpwZw",
+    totalSales: 2541,
+  },
+  {
+    id: 201,
+    name: "리본목걸이",
+    primeCategory: "jwerly",
+    subCategory: "necklace",
+    description: "234",
+    price: 27800,
+    discount: 71,
+    companyId: 1002,
+    companyName: "회사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/sxYudrkXg0E/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE2XzE3MjY0OTgzNTAxNjcxOThtLmpwZw",
+    totalSales: 2500,
+  },
+  {
+    id: 202,
+    name: "클로버목걸이",
+    primeCategory: "jwerly",
+    subCategory: "necklace",
+    description: "234",
+    price: 27800,
+    discount: 71,
+    companyId: 1003,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/0uMscurnkiM/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjMxMDEzXzE2OTcxODI0OTAyNTgwOTFtLmpwZw",
+    totalSales: 300,
+  },
+  {
+    id: 203,
+    name: "투명 원석 목걸이",
+    primeCategory: "jwerly",
+    subCategory: "earing",
+    description: "234",
+    price: 27800,
+    discount: 71,
+    companyId: 1001,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/t2nMqbUoUQY/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE2XzE3MjY0NjgzNzAxMDc0MDZtLmpwZw",
+    totalSales: 100,
+  },
+  {
+    id: 204,
+    name: "원형 링 목걸이",
+    primeCategory: "jwerly",
+    subCategory: "earing",
+    description: "234",
+    price: 30000,
+    discount: 30,
+    companyId: 1002,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/R-tYOSyxaG8/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE2XzE3MjY0Nzg5NzAxMTQ4NzRtLmpwZw",
+    totalSales: 2500,
   },
 
   //발찌
@@ -83,6 +215,81 @@ const products = [
     imgSrc:
       "https://thumbnail6.coupangcdn.com/thumbnails/remote/292x292q65ex/image/vendor_inventory/2e04/d6b5a115baf35b52f94af4f9b557d999ee44b9ebfaf3790e93f12225e2c4.jpg",
     totalSales: 5642,
+  },
+
+  //반지
+  {
+    id: 300,
+    name: "🦋 Carinabe 나비반지 2colors 🦋 우정반지 우정템 우정링",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description: "마치 에스파의 멤버 '카리나'를 연상케 하는 카리나비반지 🦋",
+    price: 19900,
+    discount: 30,
+    companyId: 5003,
+    companyName: "c사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/vD4o_uwy9fQ/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTAzXzE3MjUzNDI3OTI2OTU4NjRtLmpwZw",
+    totalSales: 7421,
+  },
+  {
+    id: 301,
+    name: "오늘출발/(각인)18k 하이퀄리티 코코 퀄팅 볼드반지",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description:
+      "엠보 퀄팅 디테일의 세련되면서도 고급스러운 무드를 가진 반지를 소개할게요. 데일리로 부담없이 착용하기 좋은 제품이에요",
+    price: 60000,
+    discount: 46,
+    companyId: 5003,
+    companyName: "c사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/zU5MkEmNmZ0/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODEwXzE3MjMyODMxNjQyNzI4MTFtLmpwZw",
+    totalSales: 1623,
+  },
+  {
+    id: 302,
+    name: "[made] 섬광 각인 볼드 웨이브 오픈 링 반지",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description:
+      "소재 / 신주 + 도금 사이즈 / 오픈링으로 사이즈 조절 가능 **내구성이 다소 강한 소재의 반지로 사이즈 조절 시 다소 힘을 주어 조정 해주셔야 합니다 예민하신 분은 신중한 구매 부탁드립니다 :)",
+    price: 11400,
+    discount: 5,
+    companyId: 5002,
+    companyName: "b사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/GqTQoCP9zCA/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwNjAyXzE3MTczMDg4NjUwMTIyMzhtLmpwZw",
+    totalSales: 24000,
+  },
+  {
+    id: 303,
+    name: "오늘출발(각인) high quality 18k 콰트로 반지",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description: "요즘 핫하면서 유행타지 않은 디자인 콰트로 링을 가져왔어요.",
+    price: 70000,
+    discount: 50,
+    companyId: 5001,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/UrmT6opkAA8/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE1XzE3MjYzOTY5MzgxNTU3NzhtLmpwZw",
+    totalSales: 1623,
+  },
+  {
+    id: 304,
+    name: "은커플링 실버반지 우정반지 돌체",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description:
+      "심플한 디자인의 윤곽이 멋스러운 길리 입니다. 여성 반지에는 메인스톤과 서브스톤을 세팅하여 화려하지만 절제된 아름다움을 느끼게 해줍니다. 남성 반지에는 큐빅없이 라인을 강조해 부드럽고 세련된 느낌을 줍니다. 남여 디자인 구분없이, 취향에 맞는 제품을 선택 하시면 좋습니다.",
+    price: 130000,
+    discount: 50,
+    companyId: 5004,
+    companyName: "d사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/WL765C-Xo_E/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODE0XzE3MjM2MzE2MjgwNTQ2MzltLmpwZw",
+    totalSales: 7421,
   },
   {
     id: 601,
