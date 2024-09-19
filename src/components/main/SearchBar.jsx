@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
+  const navigation = useNavigate();
   return (
     <div
       className="flex w-full justify-center items-center bg-white relative"
@@ -39,6 +41,7 @@ function SearchBar() {
         <div
           className="flex items-center justify-center"
           style={{ width: "36px", height: "44px" }}
+          onClick={() => navigation("/cart")}
         >
           <img
             src="/images/SearchBar2.svg"
