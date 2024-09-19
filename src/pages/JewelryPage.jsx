@@ -5,7 +5,7 @@ const JewelryPage = () => {
   return (
     <div style={{ paddingTop: "120px" }}>
       <div className="flex h-10" style={{ backgroundColor: "black" }}></div>
-      <div className="flex justify-between p-3 flex-wrap gap-5">
+      <div className="grid grid-cols-5 p-3 gap-5">
         <JewelryType
           imgsrc={"https://img.a-bly.com/categories/four_col_sub/265.jpg"}
           typeName={"귀걸이"}

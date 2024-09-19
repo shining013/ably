@@ -4,7 +4,7 @@ function JewelryType({ imgsrc, typeName }) {
   return (
     <div>
       <div className="p-3">
-        <div className="w-14 h-14 rounded-full overflow-hidden">
+        <div className="w-14 h-14 rounded-full overflow-hidden mx-auto">
           <img src={imgsrc} alt="" />
         </div>
       </div>
