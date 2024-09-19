@@ -28,7 +28,7 @@ function CategoryList() {
 
   return (
     <div
-      className="grid grid-cols-5 box-border cursor-auto p-2  grid-rows-2 justify-items-center w-full place-items-center items-center overflow-x-scroll gap-x-2 gap-y-2"
+      className="grid grid-cols-5 box-border cursor-auto p-2  grid-rows-2 justify-items-center w-full place-items-center items-center overflow-x-hidden gap-x-2 gap-y-2"
       style={{ paddingTop: "4px" }}
     >
       {categories.map((item) => (
@@ -49,7 +49,7 @@ function CategoryList() {
               />
             </div>
             <div
-              className="text-body5  m-0 overflow-hidden justify-center text-center"
+              className="text-body5  m-0  overflow-x-clip justify-center text-center"
               style={{
                 textOverflow: "ellipsis",
                 overflow: "clip",
