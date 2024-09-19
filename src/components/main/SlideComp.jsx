@@ -140,12 +140,11 @@ function SlideComp() {
         </svg>
       </div>
       <div
-        className="swiper-pagination bottom-4 right-4 text-center"
+        className="swiper-pagination bottom-4 right-4 text-center text-white"
         style={{
           padding: "4px 12px",
           borderRadius: "12px",
           backgroundColor: "rgba(0, 0, 0, 0.4)",
-          color: "white",
         }}
       ></div>
     </div>
