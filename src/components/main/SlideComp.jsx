@@ -1,19 +1,23 @@
 import React from "react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 function SlideComp() {
   return (
     <div className="relative mb-5">
       <Swiper
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        loop={true}
         pagination={{
           type: "fraction",
+          el: ".swiper-pagination",
         }}
         navigation={{ prevEl: ".prev", nextEl: ".next" }}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -135,6 +139,15 @@ function SlideComp() {
           ></path>
         </svg>
       </div>
+      <div
+        className="swiper-pagination bottom-4 right-4 text-center"
+        style={{
+          padding: "4px 12px",
+          borderRadius: "12px",
+          backgroundColor: "rgba(0, 0, 0, 0.4)",
+          color: "white",
+        }}
+      ></div>
     </div>
   );
 }
