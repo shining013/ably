@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 
 function SlideComp() {
   return (
-    <div className="relative">
+    <div className="relative mb-5">
       <Swiper
         pagination={{
           type: "fraction",

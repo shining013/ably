@@ -1,9 +1,9 @@
 import React from "react";
 import CardList from "../components/common/CardList";
 
-import SlideComp from "../components/SlideComp";
 import CateList from "../components/main/CateList";
 import BottomBar from "../components/main/Bottomnav";
+import SlideComp from "../components/main/SlideComp";
 
 const MainPage = () => {
   return (
