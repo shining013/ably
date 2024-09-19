@@ -1,5 +1,5 @@
 import React from "react";
-import SlideComp from "src/components/SlideComp";
+import SlideComp from "src/components/main/SlideComp";
 import CardList from "src/components/common/CardList";
 import RecommendBox from "src/components/main/RecommendBox";
 import BottomBar from "src/components/main/Bottomnav";
