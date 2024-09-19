@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function CategoryList() {
+  const navigation = useNavigate();
+
   const categories = [
     { id: 1, name: "남자패션", imageSrc: "/images/Cate1.png" },
     { id: 2, name: "의류", imageSrc: "/images/Cate2.png" },
-    { id: 3, name: "주얼리", imageSrc: "/images/Cate3.png" },
+    { id: 3, name: "jewelry", imageSrc: "/images/Cate3.png" },
     { id: 4, name: "패션소품", imageSrc: "/images/Cate4.png" },
     { id: 5, name: "빅사이즈", imageSrc: "/images/Cate5.png" },
     { id: 6, name: "신발", imageSrc: "/images/Cate6.png" },
@@ -37,6 +40,7 @@ function CategoryList() {
             <div
               className="block gap-x-1 "
               style={{ maxWidth: "34px", maxHeight: "34px", gap: "6px" }}
+              onClick={() => navigation(`/${item.name}`)}
             >
               <img
                 className="object-fill justify-items-center"
