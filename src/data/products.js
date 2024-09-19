@@ -158,7 +158,7 @@ const products = [
     imgSrc:
       "https://d3ha2047wt6x28.cloudfront.net/WL765C-Xo_E/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODE0XzE3MjM2MzE2MjgwNTQ2MzltLmpwZw",
     totalSales: 7421,
-=======
+  },
   {
     id: 601,
     name: "투명 보석함",
