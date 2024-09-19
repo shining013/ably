@@ -1,13 +1,13 @@
 import React from "react";
-import Button from "../common/Button";
+import Button from "src/components/common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const CartEmpty = () => {
   return (
     <div
-      className="relative pt-32 w-full gap-y-2 flex flex-col justify-center items-center"
-      style={{ top: "90px", height: `calc(100vh - 104px)` }}
+      className="pt-32 w-full gap-y-2 flex flex-col justify-center items-center"
+      style={{ height: `calc(100vh - 104px)` }}
     >
       <div className="h-16">
         <FontAwesomeIcon

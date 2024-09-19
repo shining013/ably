@@ -1,9 +1,9 @@
 import React from "react";
-import Card from "./Card";
+import Card from "src/components/common/Card";
 
 const CardList = () => {
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-2 gap-3 pb-5">
       {Array(9)
         .fill({
           discount: 10,
