@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../common/Button";
 
-function CartItem({ productInfo }) {
+function CartItem({ productInfo, changeEvent, changeOpen, index }) {
   return (
-    <div className="w-full" style={{ "max-width": "600px" }}>
+    <div className="w-full">
       <p className="pt-6 px-4 text-gray-70 text-lg font-semibold tracking-tighter leading-6">
         {productInfo.company_name} 배송상품
       </p>
@@ -54,7 +54,7 @@ function CartItem({ productInfo }) {
             className="text-gray-60 text-xs tracking-tight leading-4 h-12 pt-3 px-4 pb-4 flex items-center rounded bg-gray-100"
             style={{ width: "calc(100% - 32px" }}
           >
-            {productInfo.option}
+            {productInfo.option1}/{productInfo.option2}
           </p>
           <div
             className="flex gap-2 mt-3"
@@ -65,6 +65,10 @@ function CartItem({ productInfo }) {
               option={
                 "w-full h-10 text-sm font-semibold border rounded tracking-tight leading-4"
               }
+              onClick={() => {
+                changeEvent(index);
+                changeOpen(true);
+              }}
             />
             <select className="w-full h-10 px-3 flex items-center relative border border-gray-300 rounded">
               <option value="1">1</option>

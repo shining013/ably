@@ -7,9 +7,12 @@ import TopInfo from "src/components/common/TopInfo";
 import CartTotal from "src/components/cart/CartTotal";
 import CartResult from "src/components/cart/CartResult";
 import OrderButton from "src/components/cart/OrderButton";
+import CartOptionSelect from "src/components/cart/CartOptionSelect";
 
 const CartPage = () => {
   const [totalItem, setTotalItem] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [itemOption, setItemOption] = useState(0);
 
   const dummy = [
     {
@@ -18,7 +21,8 @@ const CartPage = () => {
       company_name: "asdkf",
       price: "3243",
       sales: "300",
-      option: "none/none",
+      option1: "none",
+      option2: "none",
     },
     {
       id: 2,
@@ -26,7 +30,8 @@ const CartPage = () => {
       company_name: "sgsfg",
       price: "3243",
       sales: "200",
-      option: "none/none",
+      option1: "none",
+      option2: "none",
     },
     {
       id: 3,
@@ -34,7 +39,8 @@ const CartPage = () => {
       company_name: "xcvbs",
       price: "3243",
       sales: "400",
-      option: "none/none",
+      option1: "none",
+      option2: "none",
     },
     {
       id: 4,
@@ -42,7 +48,8 @@ const CartPage = () => {
       company_name: "ghjk",
       price: "3243",
       sales: "200",
-      option: "none/none",
+      option1: "none",
+      option2: "none",
     },
     {
       id: 5,
@@ -50,7 +57,8 @@ const CartPage = () => {
       company_name: "yuefh",
       price: "3243",
       sales: "1000",
-      option: "none/none",
+      option1: "none",
+      option2: "none",
     },
   ];
 
@@ -61,13 +69,23 @@ const CartPage = () => {
         {dummy.map((item, i) => {
           return (
             <div key={i}>
-              <CartItem productInfo={item} />
+              <CartItem
+                productInfo={item}
+                changeEvent={setItemOption}
+                changeOpen={setOpen}
+                index={i}
+              />
             </div>
           );
         })}
         <CartTotal totalItem={totalItem} />
         <CartResult totalItem={totalItem} />
         <OrderButton totalItem={totalItem} />
+        <CartOptionSelect
+          open={open}
+          onClose={() => setOpen(false)}
+          item={dummy[itemOption]}
+        />
       </div>
     );
   };
