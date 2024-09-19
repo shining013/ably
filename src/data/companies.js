@@ -24,4 +24,14 @@ const companies = [
     name: "d사",
     location: "서울특별시 중구 세종대로 110",
   },
+  {
+    id: 6001,
+    name: "파이브던",
+    location: "서울특별시 동작구 사당로 90",
+  },
+  {
+    id: 6002,
+    name: "루시아이",
+    location: "서울특별시 금천구 디지털로 178",
+  },
 ];
