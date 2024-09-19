@@ -53,7 +53,7 @@ function CategoryList() {
               style={{
                 textOverflow: "ellipsis",
                 overflow: "clip",
-                paddingTop: "4px",
+                paddingTop: "4px", /*수정 */ 
               }}
             >
               {item.name}
