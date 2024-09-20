@@ -11,7 +11,7 @@ import RecommendSection from "src/components/product/RecommendSection";
 const ProductInfoPage = () => {
   return (
     <>
-      <TopNavbar title="Ddd" />
+      <TopNavbar title="상품정보" />
       <div className="py-[120px]">
         <StoreInfo
           storeName={"스틸에디션"}
