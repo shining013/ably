@@ -5,6 +5,8 @@ import JewelryPage from "./pages/JewelryPage";
 import CartPage from "./pages/CartPage";
 import ProductInfoPage from "./pages/ProductInfoPage";
 import SearchPage from "./pages/SearchPage";
+import SubCategoryPage from "./pages/SubCategoryPage";
+
 
 const Router = () => {
   return (
@@ -13,6 +15,7 @@ const Router = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/category/:categoryId" element={<JewelryPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/subcategory" element={<SubCategoryPage />} />
         <Route path="/product" element={<ProductInfoPage />} />
         <Route path="/search" element={<SearchPage />} />
       </Routes>
