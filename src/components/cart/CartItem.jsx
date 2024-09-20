@@ -22,6 +22,7 @@ function CartItem({
             type="checkbox"
             className="w-4 h-4 mr-4 self-center"
             id={index}
+            checked={checked(index)}
             onChange={(e) => checkEvent(e.target.checked, e.target.id)}
             style={{ color: "#9e9e9e" }}
           ></input>
