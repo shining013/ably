@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../common/Button";
 import SelectedCard from "./SelectedCard";
 import SelectDropdown from "../common/SelectDropdown";
+import { enqueueSnackbar } from "notistack";
 
 const SelectDrawer = ({ open, onClose }) => {
   const [isSelecting, setIsSelecting] = useState(true);
@@ -139,6 +140,10 @@ const SelectDrawer = ({ open, onClose }) => {
           text="장바구니"
           option={"whiteType"}
           style={{ height: "56px" }}
+          onClick={() => {
+            enqueueSnackbar("장바구니에 상품을 담았어요");
+            onClose();
+          }}
         />
         <Button
           text="구매하기"
