@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartSelectBar({ totalItem, selectItem }) {
+function CartSelectBar({ totalItem, selectItem, checkAll, checkAllEvent }) {
   return (
     <div
       className="z-10 sticky w-full h-16 flex justify-between items-center border-b bg-white"
@@ -10,6 +10,8 @@ function CartSelectBar({ totalItem, selectItem }) {
         <input
           type="checkbox"
           className="w-4 h-4 mr-2"
+          checked={checkAll()}
+          onChange={(e) => checkAllEvent(e)}
           style={{ color: "#9e9e9e" }}
         ></input>
         <p className="text-sm leading-4 text-gray-50">

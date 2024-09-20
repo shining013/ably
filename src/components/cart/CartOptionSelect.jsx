@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Drawer } from "@material-tailwind/react";
 import Button from "../common/Button";
 import SelectDropdown from "../common/SelectDropdown";
 
 const CartOptionSelect = ({ open, onClose, item }) => {
+  const [selectedItem, setSelectedItem] = useState(0);
+
+  useEffect(() => {
+    setSelectedItem(item);
+  }, [item]);
+
   return (
     <Drawer
       open={open}
@@ -17,12 +23,12 @@ const CartOptionSelect = ({ open, onClose, item }) => {
     >
       <div className="flex flex-col gap-3">
         <SelectDropdown
-          defaultValue={item.option1}
-          options={["none", "green", "blue", "black", "white"]}
+          defaultValue={selectedItem.option1}
+          options={["beige", "white", "black"]}
         />
         <SelectDropdown
-          defaultValue={item.option2}
-          options={["none", "s", "m", "l"]}
+          defaultValue={selectedItem.option2}
+          options={["s", "m", "l"]}
         />
       </div>
 
@@ -30,7 +36,12 @@ const CartOptionSelect = ({ open, onClose, item }) => {
         className="flex flex-row gap-2 p-3 absolute border-t left-0 right-0 bottom-0"
         style={{ borderColor: "#eee" }}
       >
-        <Button text="취소" option={"whiteType"} style={{ height: "56px" }} />
+        <Button
+          text="취소"
+          option={"whiteType"}
+          style={{ height: "56px" }}
+          onClick={onClose}
+        />
         <Button
           text="변경하기"
           option={"blackType"}
