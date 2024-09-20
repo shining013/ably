@@ -1,10 +1,10 @@
 import React from "react";
 
-const Card = ({ image, discount, price, name, description, salesCount }) => {
+const Card = ({ image, discount, price, name, imgSrc, description, salesCount }) => {
   return (
     <div className="flex flex-col w-full">
       <img
-        src="https://d3ha2047wt6x28.cloudfront.net/2_eeRV54Qs0/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzI4YjMzOGI5YmQwZjkzN2QzOTU0Y2M1YjZlYzgwYjVhLmpwZw"
+        src={imgSrc}
         alt="jewerly"
         className="rounded-sm w-full object-cover"
       />
