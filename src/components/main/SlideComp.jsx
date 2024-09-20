@@ -144,7 +144,10 @@ function SlideComp() {
         style={{
           padding: "4px 12px",
           borderRadius: "12px",
+          width: "auto",
           backgroundColor: "rgba(0, 0, 0, 0.4)",
+          left: "inherit",
+          display: "inline-table",
           bottom: "12px",
           right: "12px",
           textAlign: "center",
