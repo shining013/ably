@@ -1,10 +1,6 @@
 import React from 'react'
 
-const CartResult = ({totalItem}) => {
-    const totalPrice = totalItem.reduce((acc, cur)=>{
-        return acc + parseInt(cur.price) - parseInt(cur.sales)
-      }, 0);
-
+const CartResult = ({totalItem, totalPrice}) => {
   return (
     <div className='flex flex-col py-6 px-4 gap-4 border-t'>
         <div className='flex justify-between'>

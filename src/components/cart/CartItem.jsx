@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../common/Button";
 
 function CartItem({
@@ -10,6 +10,10 @@ function CartItem({
   index,
 }) {
   const [isChecked, setIsChecked] = useState(false);
+  const [itemAmount, setItemAmount] = useState(productInfo.amount);
+  useEffect(()=>{
+    setIsChecked(checked(productInfo))
+  },[checked])
 
   return (
     <div className="w-full">
@@ -21,9 +25,8 @@ function CartItem({
           <input
             type="checkbox"
             className="w-4 h-4 mr-4 self-center"
-            id={index}
-            checked={checked(index)}
-            onChange={(e) => checkEvent(e.target.checked, e.target.id)}
+            checked={isChecked}
+            onChange={(e) => {checkEvent(e.target.checked, productInfo); }}
             style={{ color: "#9e9e9e" }}
           ></input>
           <img
@@ -82,7 +85,7 @@ function CartItem({
                 changeOpen(true);
               }}
             />
-            <select className="w-full h-10 px-3 flex items-center relative border border-gray-300 rounded">
+            <select className="w-full h-10 px-3 flex items-center relative border border-gray-300 rounded" key={productInfo.amount} defaultValue={productInfo.amount}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -190,15 +193,15 @@ function CartItem({
       <hr />
       <p className="py-5 px-4 text-sm text-right tracking-tighter leading-6">
         상품{" "}
-        {parseInt(productInfo.price - productInfo.sales).toLocaleString(
+        {isChecked?(parseInt(productInfo.price - productInfo.sales) * itemAmount).toLocaleString(
           "ko-KR"
-        )}
+        ) : 0}
         원 + 배송비 0원{" "}
         <b className="text-sm">
           ={" "}
-          {parseInt(productInfo.price - productInfo.sales).toLocaleString(
+          {isChecked ? (parseInt(productInfo.price - productInfo.sales) * itemAmount).toLocaleString(
             "ko-KR"
-          )}
+          ) : 0}
           원
         </b>
       </p>

@@ -8,86 +8,13 @@ import CartResult from "src/components/cart/CartResult";
 import OrderButton from "src/components/cart/OrderButton";
 import CartOptionSelect from "src/components/cart/CartOptionSelect";
 import TopNavbar from "src/components/common/TopNavbar";
+import CartCRUD from "src/components/cart/CartCRUD";
 
 const CartPage = () => {
-  //구매 확정
-  const [totalItem, setTotalItem] = useState([]);
   //옵션버튼
   const [open, setOpen] = useState(false);
   const [itemOption, setItemOption] = useState(0);
-  //체크 박스
-  const checkHandler = (isChecked, id) => {
-    if (isChecked) {
-      setTotalItem((prev) => [...prev, id]);
-    } else {
-      setTotalItem(totalItem.filter((item) => item != id));
-    }
-    console.log(totalItem);
-  };
-  const allCheckHandler = (e) => {
-    if (e.target.checked) {
-      setTotalItem(dummy.map((item, i) => i));
-    } else {
-      setTotalItem([]);
-    }
-    console.log(totalItem);
-  };
-  const check = (id) => {
-    console.log(id);
-    console.log(totalItem);
-    return totalItem.includes(id) ? true : false;
-  };
-  const checkAll = () => {
-    return totalItem.length === dummy.length ? true : false;
-  };
-
-  const dummy = [
-    {
-      id: 1,
-      name: "dkdkd",
-      company_name: "asdkf",
-      price: "3243",
-      sales: "300",
-      option1: "none",
-      option2: "none",
-    },
-    {
-      id: 2,
-      name: "dkdkd",
-      company_name: "sgsfg",
-      price: "3243",
-      sales: "200",
-      option1: "none",
-      option2: "none",
-    },
-    {
-      id: 3,
-      name: "dkdkd",
-      company_name: "xcvbs",
-      price: "3243",
-      sales: "400",
-      option1: "none",
-      option2: "none",
-    },
-    {
-      id: 4,
-      name: "dkdkd",
-      company_name: "ghjk",
-      price: "3243",
-      sales: "200",
-      option1: "none",
-      option2: "none",
-    },
-    {
-      id: 5,
-      name: "dkdkd",
-      company_name: "yuefh",
-      price: "3243",
-      sales: "1000",
-      option1: "none",
-      option2: "none",
-    },
-  ];
+  const {totalItem, totalPrice, dummy, checkHandler, allCheckHandler, check, checkAll} = CartCRUD();
 
   const cartPageComponents = () => {
     return (
@@ -113,8 +40,8 @@ const CartPage = () => {
           );
         })}
         <CartTotal totalItem={totalItem} />
-        <CartResult totalItem={totalItem} />
-        <OrderButton totalItem={totalItem} />
+        <CartResult totalItem={totalItem} totalPrice={totalPrice}/>
+        <OrderButton totalPrice={totalPrice} />
         <CartOptionSelect
           open={open}
           onClose={() => setOpen(false)}
