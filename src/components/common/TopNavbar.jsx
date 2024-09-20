@@ -3,10 +3,11 @@ import BackButton from "src/components/common/BackButton";
 import cartIcon from "src/assets/icons/cart.svg";
 import homeIcon from "src/assets/icons/home.svg";
 import searchIcon from "src/assets/icons/search.svg";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function TopNavbar({ title }) {
   const location = useLocation();
+  const navigation = useNavigate();
 
   return (
     <div className="w-full h-11 relative flex justify-center items-center bg-white">
@@ -21,7 +22,12 @@ function TopNavbar({ title }) {
         {location.pathname.includes("category") && (
           <img src={searchIcon} alt="search-icon" className="w-6" />
         )}
-        <img src={cartIcon} alt="cart-icon" className="w-6" />
+        <img
+          src={cartIcon}
+          alt="cart-icon"
+          className="w-6"
+          onClick={() => navigation("/cart")}
+        />
       </div>
     </div>
   );
