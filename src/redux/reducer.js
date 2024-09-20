@@ -4,8 +4,6 @@ const init = {
 };
 
 const reducer = (state = init, action) => {
-  console.log(state);
-  console.log(action.type);
   if (action.type == "up") {
     return { ...state, value: state.value + action.payload };
   }
