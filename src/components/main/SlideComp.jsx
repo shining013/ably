@@ -8,7 +8,7 @@ import "swiper/css/autoplay";
 
 function SlideComp() {
   return (
-    <div className="relative mb-5">
+    <div className="relative mb-5" style={{ overflowX: "hidden" }}>
       <Swiper
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop={true}
