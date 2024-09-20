@@ -8,7 +8,10 @@ function SearchBar() {
       className="flex w-full justify-center items-center bg-white relative"
       style={{ paddingTop: "2px" }}
     >
-      <div className="flex flex-auto w-full items-center justify-center">
+      <div
+        className="flex flex-auto w-full items-center justify-center"
+        onClick={() => navigation("/search")}
+      >
         <div
           className="flex flex-grow flex-shrink rounded-lg items-center gap-1 cursor-pointer bg-gray-20"
           style={{
@@ -38,17 +41,17 @@ function SearchBar() {
             하나만 사도 무료배송
           </p>
         </div>
-        <div
-          className="flex items-center justify-center"
-          style={{ width: "36px", height: "44px" }}
-          onClick={() => navigation("/cart")}
-        >
-          <img
-            src="/images/SearchBar2.svg"
-            style={{ width: "24px", height: "24px", fill: "none" }}
-            alt=""
-          ></img>
-        </div>
+      </div>
+      <div
+        className="flex items-center justify-center"
+        style={{ width: "36px", height: "44px" }}
+        onClick={() => navigation("/cart")}
+      >
+        <img
+          src="/images/SearchBar2.svg"
+          style={{ width: "24px", height: "24px", fill: "none" }}
+          alt=""
+        ></img>
       </div>
     </div>
   );
