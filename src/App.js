@@ -10,9 +10,7 @@ const App = () => {
   return (
     <ThemeProvider store={store}>
       <SnackbarProvider />
-      <Provider>
-        <Router />
-      </Provider>
+      <Router />
     </ThemeProvider>
   );
 };
