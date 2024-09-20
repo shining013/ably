@@ -11,10 +11,10 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/jewelry" element={<JewelryPage />} />
+        <Route path="/category/:categoryId" element={<JewelryPage />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/product-info" element={<ProductInfoPage />} />
         <Route path="/subcategory" element={<SubCategoryPage />} />
+        <Route path="/product" element={<ProductInfoPage />} />
       </Routes>
     </BrowserRouter>
   );
