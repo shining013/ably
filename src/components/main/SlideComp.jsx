@@ -6,6 +6,21 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
+const urls = [
+  "https://img.a-bly.com/banner/images/banner_image_1725584572935488.gif",
+  "https://img.a-bly.com/banner/images/banner_image_1725878187379134.png",
+  "https://img.a-bly.com/banner/images/banner_image_1725614923079307.png",
+  "https://img.a-bly.com/banner/images/banner_image_1725584705582556.gif",
+  "https://img.a-bly.com/banner/images/banner_image_1725496724216422.jpg",
+  "https://img.a-bly.com/banner/images/banner_image_1725585366227293.gif",
+  "https://img.a-bly.com/banner/images/banner_image_1726018135815732.png",
+  "https://img.a-bly.com/banner/images/banner_image_1725962107825185.png",
+  "https://img.a-bly.com/banner/images/banner_image_1725439173130378.png",
+  "https://img.a-bly.com/banner/images/banner_image_1725614756170743.png",
+  "https://img.a-bly.com/banner/images/banner_image_1725883554563716.png",
+  "https://img.a-bly.com/banner/images/banner_image_1725865687790171.png",
+];
+
 function SlideComp() {
   return (
     <div className="relative mb-5" style={{ overflowX: "hidden" }}>
@@ -20,79 +35,15 @@ function SlideComp() {
         modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725584572935488.gif"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725878187379134.png"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725614923079307.png"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725584705582556.gif"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725496724216422.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725585366227293.gif"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1726018135815732.png"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725962107825185.png"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725439173130378.png"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725614756170743.png"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725883554563716.png"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.a-bly.com/banner/images/banner_image_1725865687790171.png"
-            alt=""
-          />
-        </SwiperSlide>
+        {urls.map((url) => {
+          return (
+            <SwiperSlide key={url}>
+              <img src={url} alt="" />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
+
       <div className="prev absolute flex w-10 h-10 top-1/2 -translate-y-2/4 z-10 justify-center items-center left-0 bg-[rgba(0,0,0,0.4)]">
         <svg
           viewBox="0 0 24 24"
