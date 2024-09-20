@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../common/Button";
 
-function CartItem({ productInfo, changeEvent, changeOpen, index }) {
+function CartItem({
+  productInfo,
+  checked,
+  checkEvent,
+  changeEvent,
+  changeOpen,
+  index,
+}) {
+  const [isChecked, setIsChecked] = useState(false);
+
   return (
     <div className="w-full">
       <p className="pt-6 px-4 text-gray-70 text-lg font-semibold tracking-tighter leading-6">
@@ -12,6 +21,8 @@ function CartItem({ productInfo, changeEvent, changeOpen, index }) {
           <input
             type="checkbox"
             className="w-4 h-4 mr-4 self-center"
+            id={index}
+            onChange={(e) => checkEvent(e.target.checked, e.target.id)}
             style={{ color: "#9e9e9e" }}
           ></input>
           <img

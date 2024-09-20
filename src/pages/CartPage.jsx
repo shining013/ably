@@ -10,9 +10,31 @@ import OrderButton from "src/components/cart/OrderButton";
 import CartOptionSelect from "src/components/cart/CartOptionSelect";
 
 const CartPage = () => {
+  //구매 확정
   const [totalItem, setTotalItem] = useState([]);
+  //옵션버튼
   const [open, setOpen] = useState(false);
   const [itemOption, setItemOption] = useState(0);
+  //체크 박스
+  const checkHandler = (isChecked, id) => {
+    if (isChecked) {
+      setTotalItem((prev) => [...prev, id]);
+    } else {
+      setTotalItem(totalItem.filter((item) => item != id));
+    }
+    console.log(totalItem);
+  };
+  const allCheckHandler = (e) => {
+    if (e.target.checked) {
+      setTotalItem(dummy.map((item, i) => i));
+    } else {
+      setTotalItem([]);
+    }
+    console.log(totalItem);
+  };
+  const checkAll = () => {
+    return totalItem.length === dummy.length ? true : false;
+  };
 
   const dummy = [
     {
@@ -65,12 +87,18 @@ const CartPage = () => {
   const cartPageComponents = () => {
     return (
       <div className="pb-20">
-        <CartSelectBar totalItem={dummy.length} selectItem={totalItem.length} />
+        <CartSelectBar
+          totalItem={dummy.length}
+          selectItem={totalItem.length}
+          checkAll={checkAll}
+          checkAllEvent={allCheckHandler}
+        />
         {dummy.map((item, i) => {
           return (
             <div key={i}>
               <CartItem
                 productInfo={item}
+                checkEvent={checkHandler}
                 changeEvent={setItemOption}
                 changeOpen={setOpen}
                 index={i}
