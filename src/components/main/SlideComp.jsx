@@ -6,19 +6,20 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
+const baseUrl = "https://img.a-bly.com/banner/images/banner_image_";
 const urls = [
-  "https://img.a-bly.com/banner/images/banner_image_1725584572935488.gif",
-  "https://img.a-bly.com/banner/images/banner_image_1725878187379134.png",
-  "https://img.a-bly.com/banner/images/banner_image_1725614923079307.png",
-  "https://img.a-bly.com/banner/images/banner_image_1725584705582556.gif",
-  "https://img.a-bly.com/banner/images/banner_image_1725496724216422.jpg",
-  "https://img.a-bly.com/banner/images/banner_image_1725585366227293.gif",
-  "https://img.a-bly.com/banner/images/banner_image_1726018135815732.png",
-  "https://img.a-bly.com/banner/images/banner_image_1725962107825185.png",
-  "https://img.a-bly.com/banner/images/banner_image_1725439173130378.png",
-  "https://img.a-bly.com/banner/images/banner_image_1725614756170743.png",
-  "https://img.a-bly.com/banner/images/banner_image_1725883554563716.png",
-  "https://img.a-bly.com/banner/images/banner_image_1725865687790171.png",
+  `${baseUrl}1725584572935488.gif`,
+  `${baseUrl}1725878187379134.png`,
+  `${baseUrl}1725614923079307.png`,
+  `${baseUrl}1725584705582556.gif`,
+  `${baseUrl}1725496724216422.jpg`,
+  `${baseUrl}1725585366227293.gif`,
+  `${baseUrl}1726018135815732.png`,
+  `${baseUrl}1725962107825185.png`,
+  `${baseUrl}1725439173130378.png`,
+  `${baseUrl}1725614756170743.png`,
+  `${baseUrl}1725883554563716.png`,
+  `${baseUrl}1725865687790171.png`,
 ];
 
 function SlideComp() {
