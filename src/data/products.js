@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     //귀걸이
 

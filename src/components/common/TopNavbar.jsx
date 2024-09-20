@@ -3,22 +3,34 @@ import BackButton from "src/components/common/BackButton";
 import cartIcon from "src/assets/icons/cart.svg";
 import homeIcon from "src/assets/icons/home.svg";
 import searchIcon from "src/assets/icons/search.svg";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const TopNavbar = ({ title }) => {
+function TopNavbar({ title }) {
+  const location = useLocation();
+  const navigation = useNavigate();
+
   return (
-    <div
-      className="flex flex-row justify-between items-center fixed bg-white w-full py-2"
-      style={{ top: "60px", maxWidth: "600px" }}
-    >
-      <BackButton />
-      <div className="text-h5">{title}</div>
-      <div className="flex flex-row gap-3 px-1">
-        <img src={homeIcon} alt="home-icon" />
-        <img src={searchIcon} alt="search-icon" />
-        <img src={cartIcon} alt="cart-icon" />
+    <div className="w-full h-11 relative flex justify-center items-center bg-white">
+      <div className="absolute left-2 flex justify-center items-center">
+        <BackButton />
+      </div>
+      <p className="py-3 text-lg font-semibold leading-6 .tracking-tighter">
+        {title}
+      </p>
+      <div className="absolute right-2 flex gap-3">
+        <img src={homeIcon} alt="home-icon" className="w-6" />
+        {location.pathname.includes("category") && (
+          <img src={searchIcon} alt="search-icon" className="w-6" />
+        )}
+        <img
+          src={cartIcon}
+          alt="cart-icon"
+          className="w-6"
+          onClick={() => navigation("/cart")}
+        />
       </div>
     </div>
   );
-};
+}
 
 export default TopNavbar;

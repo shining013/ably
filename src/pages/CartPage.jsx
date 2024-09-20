@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CartTopBar from "src/components/cart/CartTopBar";
 import CartSelectBar from "src/components/cart/CartSelectBar";
 import CartEmpty from "src/components/cart/CartEmpty";
 import CartItem from "src/components/cart/CartItem";
@@ -8,6 +7,7 @@ import CartTotal from "src/components/cart/CartTotal";
 import CartResult from "src/components/cart/CartResult";
 import OrderButton from "src/components/cart/OrderButton";
 import CartOptionSelect from "src/components/cart/CartOptionSelect";
+import TopNavbar from "src/components/common/TopNavbar";
 
 const CartPage = () => {
   const [totalItem, setTotalItem] = useState([]);
@@ -99,7 +99,7 @@ const CartPage = () => {
         }}
       >
         <TopInfo />
-        <CartTopBar title={"장바구니"} />
+        <TopNavbar title="장바구니" />
       </div>
       {dummy.length ? cartPageComponents() : <CartEmpty />}
     </div>
