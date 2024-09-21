@@ -17,6 +17,7 @@
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.04em;
+  box-sizing: border-box;
 }
 
 button {
@@ -27,7 +28,6 @@ body {
   overflow-y: scroll;
   margin: 0 auto;
   padding: 0;
-  min-width: 500px;
   max-width: 600px;
 }
 
