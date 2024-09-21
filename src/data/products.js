@@ -4,7 +4,7 @@ export const products = [
 
     id: 100,
     name: "14K 레이어드 피어싱 105종 모음전",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -18,7 +18,7 @@ export const products = [
   {
     id: 101,
     name: "러블리 하트 귀걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 28800,
@@ -32,7 +32,7 @@ export const products = [
   {
     id: 102,
     name: "유리알 귀걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -46,7 +46,7 @@ export const products = [
   {
     id: 103,
     name: "하트큐빅 귀걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -61,7 +61,7 @@ export const products = [
   {
     id: 104,
     name: "원터치 링 귀걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -77,7 +77,7 @@ export const products = [
   {
     id: 200,
     name: "스완목걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "necklace",
     description: "234",
     price: 15000,
@@ -91,7 +91,7 @@ export const products = [
   {
     id: 201,
     name: "리본목걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "necklace",
     description: "234",
     price: 27800,
@@ -105,7 +105,7 @@ export const products = [
   {
     id: 202,
     name: "클로버목걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "necklace",
     description: "234",
     price: 27800,
@@ -119,7 +119,7 @@ export const products = [
   {
     id: 203,
     name: "투명 원석 목걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -133,7 +133,7 @@ export const products = [
   {
     id: 204,
     name: "원형 링 목걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 30000,

@@ -11,7 +11,7 @@ const CardList = () => {
           price={item.price}
           name={item.name}
           imgSrc={item.imgSrc}
-          description={item.description}
+          company={item.companyName}
           salesCount={item.salesCount}
         />
       ))}

@@ -3,10 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import JewelryPage from "./pages/JewelryPage";
 import CartPage from "./pages/CartPage";
-import ProductInfoPage from "./pages/ProductInfoPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 import SearchPage from "./pages/SearchPage";
 import SubCategoryPage from "./pages/SubCategoryPage";
-
 
 const Router = () => {
   return (
@@ -16,7 +15,7 @@ const Router = () => {
         <Route path="/category/:categoryId" element={<JewelryPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/subcategory" element={<SubCategoryPage />} />
-        <Route path="/product" element={<ProductInfoPage />} />
+        <Route path="/product/:productId" element={<ProductDetailPage />} />
         <Route path="/search" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
