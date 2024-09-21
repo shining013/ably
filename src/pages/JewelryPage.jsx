@@ -59,7 +59,7 @@ const JewelryPage = () => {
         }}
       ></div>
       <div
-        className="flex gap-5"
+        className="flex gap-7 px-3"
         style={{
           borderBottomColor: "rgb(238, 238, 238)",
           borderBottomStyle: "solid",
@@ -67,9 +67,14 @@ const JewelryPage = () => {
         }}
       >
         <div
-          className="cursor-pointer p-3 text-center"
+          className="cursor-pointer py-3 text-center text-sm"
           style={{
             borderBottom: selectedButton === "all" ? "2px solid black" : "none",
+            fontWeight: selectedButton === "all" ? "600" : "400",
+            color:
+              selectedButton === "all"
+                ? "rgb(31, 31, 31)"
+                : "rgb(119, 119, 119)",
           }}
           onClick={() => {
             setSelectedButton("all");
@@ -78,10 +83,15 @@ const JewelryPage = () => {
           전체
         </div>
         <div
-          className="cursor-pointer p-3 text-center"
+          className="cursor-pointer py-3 text-center text-sm"
           style={{
             borderBottom:
               selectedButton === "brand" ? "2px solid black" : "none",
+            fontWeight: selectedButton === "brand" ? "600" : "400",
+            color:
+              selectedButton === "brand"
+                ? "rgb(31, 31, 31)"
+                : "rgb(119, 119, 119)",
           }}
           onClick={() => {
             setSelectedButton("brand");
@@ -90,7 +100,14 @@ const JewelryPage = () => {
           브랜드
         </div>
       </div>
-      <div className="flex gap-3">
+      <div
+        className="flex gap-3 pt-3 pb-[11px]"
+        style={{
+          borderBottomColor: "rgb(238, 238, 238)",
+          borderBottomStyle: "solid",
+          borderBottomWidth: "0.8px",
+        }}
+      >
         <JewelryFilter title="추천순"></JewelryFilter>
         <JewelryFilter title="가격"></JewelryFilter>
         <JewelryFilter title="색상"></JewelryFilter>
