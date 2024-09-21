@@ -8,69 +8,30 @@ import CartResult from "src/components/cart/CartResult";
 import OrderButton from "src/components/cart/OrderButton";
 import CartOptionSelect from "src/components/cart/CartOptionSelect";
 import TopNavbar from "src/components/common/TopNavbar";
+import CartCRUD from "src/components/cart/CartCRUD";
 
 const CartPage = () => {
-  const [totalItem, setTotalItem] = useState([]);
+  //옵션버튼
   const [open, setOpen] = useState(false);
   const [itemOption, setItemOption] = useState(0);
-
-  const dummy = [
-    {
-      id: 1,
-      name: "dkdkd",
-      company_name: "asdkf",
-      price: "3243",
-      sales: "300",
-      option1: "none",
-      option2: "none",
-    },
-    {
-      id: 2,
-      name: "dkdkd",
-      company_name: "sgsfg",
-      price: "3243",
-      sales: "200",
-      option1: "none",
-      option2: "none",
-    },
-    {
-      id: 3,
-      name: "dkdkd",
-      company_name: "xcvbs",
-      price: "3243",
-      sales: "400",
-      option1: "none",
-      option2: "none",
-    },
-    {
-      id: 4,
-      name: "dkdkd",
-      company_name: "ghjk",
-      price: "3243",
-      sales: "200",
-      option1: "none",
-      option2: "none",
-    },
-    {
-      id: 5,
-      name: "dkdkd",
-      company_name: "yuefh",
-      price: "3243",
-      sales: "1000",
-      option1: "none",
-      option2: "none",
-    },
-  ];
+  const {totalItem, totalPrice, dummy, checkHandler, allCheckHandler, check, checkAll} = CartCRUD();
 
   const cartPageComponents = () => {
     return (
       <div className="pb-20">
-        <CartSelectBar totalItem={dummy.length} selectItem={totalItem.length} />
+        <CartSelectBar
+          totalItem={dummy.length}
+          selectItem={totalItem.length}
+          checkAll={checkAll}
+          checkAllEvent={allCheckHandler}
+        />
         {dummy.map((item, i) => {
           return (
             <div key={i}>
               <CartItem
                 productInfo={item}
+                checked={check}
+                checkEvent={checkHandler}
                 changeEvent={setItemOption}
                 changeOpen={setOpen}
                 index={i}
@@ -79,8 +40,8 @@ const CartPage = () => {
           );
         })}
         <CartTotal totalItem={totalItem} />
-        <CartResult totalItem={totalItem} />
-        <OrderButton totalItem={totalItem} />
+        <CartResult totalItem={totalItem} totalPrice={totalPrice}/>
+        <OrderButton totalPrice={totalPrice} />
         <CartOptionSelect
           open={open}
           onClose={() => setOpen(false)}

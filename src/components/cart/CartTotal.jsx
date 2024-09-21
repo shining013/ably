@@ -2,10 +2,10 @@ import React from 'react'
 
 const CartTotal = ({totalItem}) => {
   const totalPrice = totalItem.reduce((acc, cur)=>{
-    return acc + parseInt(cur.price)
+    return acc + (parseInt(cur.price) * cur.amount)
   }, 0);
   const totalSales = totalItem.reduce((acc, cur)=>{
-    return acc + parseInt(cur.sales)
+    return acc + (parseInt(cur.sales) * cur.amount)
   }, 0);
 
 
