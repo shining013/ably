@@ -120,7 +120,7 @@ const SelectDrawer = ({ open, onClose }) => {
   // 상품 선택 개수 및 총 가격
   const renderTotalResult = () => {
     return (
-      <div className="py-4 px-2 flex justify-between border-y border-y-gray-30 items-center">
+      <div className="py-4 px-2 flex justify-between border-y border-y-gray-30 items-center mb-2">
         <div className="text-body2 text-gray-70">
           <strong className="text-body2 text-gray-70">{totalNums}</strong>개
           선택
@@ -134,24 +134,35 @@ const SelectDrawer = ({ open, onClose }) => {
 
   // 하단 버튼 그룹
   const renderButtonGroup = () => {
-    return (
-      <div className="flex flex-row gap-2 py-3 mt-auto">
+    if (isSelecting) {
+      return (
         <Button
-          text="장바구니"
+          text="옵션 선택 닫기"
           option={"whiteType"}
           style={{ height: "56px" }}
-          onClick={() => {
-            enqueueSnackbar("장바구니에 상품을 담았어요");
-            onClose();
-          }}
+          onClick={() => onClose()}
         />
-        <Button
-          text="구매하기"
-          option={"blackType"}
-          style={{ height: "56px" }}
-        />
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="flex flex-row gap-2 py-3 mt-auto">
+          <Button
+            text="장바구니"
+            option={"whiteType"}
+            style={{ height: "56px" }}
+            onClick={() => {
+              enqueueSnackbar("장바구니에 상품을 담았어요");
+              onClose();
+            }}
+          />
+          <Button
+            text="구매하기"
+            option={"blackType"}
+            style={{ height: "56px" }}
+          />
+        </div>
+      );
+    }
   };
 
   useEffect(() => {

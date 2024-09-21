@@ -1,7 +1,7 @@
 import React from "react";
 import shareIcon from "src/assets/icons/share.svg";
 
-const ProductInfo = ({ productName, discount, price }) => {
+const ProductInfo = ({ productName = "", discount = 0, price = 0 }) => {
   return (
     <div className="flex flex-col p-4 justify-center">
       <div className="text-gray-70 text-body1">{productName}</div>

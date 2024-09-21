@@ -13,11 +13,13 @@ import { products } from "src/data/products";
 import { useParams } from "react-router-dom";
 
 const ProductDetailPage = () => {
-  const { productId } = useParams();
+  const { productId } = useParams(101);
 
-  const productData = products.filter(
-    (item) => item.id === Number(productId)
-  )[0];
+  const [productData, setProductData] = useState([]);
+
+  useEffect(() => {
+    setProductData(products.filter((item) => item.id === Number(productId))[0]);
+  }, [productId]);
 
   return (
     <>
@@ -31,7 +33,7 @@ const ProductDetailPage = () => {
         <TopNavbar title="상품정보" />
       </div>
       <div className="mb-[120px]">
-        {/* <SlideComp /> */}
+        <SlideComp />
         <StoreInfo
           storeName={productData?.companyName}
           storeNickname={`${productData?.primeCategory} 맛집`}

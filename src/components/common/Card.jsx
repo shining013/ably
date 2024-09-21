@@ -1,8 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Card = ({ discount, price, name, imgSrc, company, salesCount }) => {
+const Card = ({ id, discount, price, name, imgSrc, company, salesCount }) => {
+  const navigation = useNavigate();
+
   return (
-    <div className="flex flex-col w-full">
+    <div
+      className="flex flex-col w-full"
+      onClick={() => {
+        navigation(`/product/${id}`);
+      }}
+    >
       <img
         src={imgSrc}
         alt="jewelry"
