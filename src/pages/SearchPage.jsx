@@ -8,9 +8,9 @@ function SearchPage() {
       <div className="flex top-0 left-0 sticky w-full items-center justify-center flex-col">
         <SearchPageBar className="flex justify-center" />
       </div>
-      <div style={{ paddingTop: "10px" }}>
+      {/* <div style={{ paddingTop: "10px" }}>
         <PopularSearchBar className="flex justify-center" />
-      </div>
+      </div> */}
     </>
   );
 }
