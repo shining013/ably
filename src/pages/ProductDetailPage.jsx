@@ -45,6 +45,8 @@ const ProductDetailPage = () => {
         <TopInfo />
         <TopNavbar title="상품정보" />
       </div>
+
+      {/* 브랜드 정보 */}
       <div className="mb-[120px]">
         <SlideComp />
         <StoreInfo
@@ -54,6 +56,8 @@ const ProductDetailPage = () => {
           starsNum={998}
         />
         <hr />
+
+        {/* 상품 상세 내용 */}
         <ProductInfo
           productName={productData?.name}
           price={productData?.price}
@@ -65,6 +69,8 @@ const ProductDetailPage = () => {
         <ReviewSection />
         <hr className="h-2 bg-gray-20" />
         <DeliveryInfo />
+
+        {/* 상품정보 & 리뷰 & 문의 탭 */}
         <DetailMenuTab selectedTab={selectedTab} onClick={handleSelectedTab} />
         {selectedTab === "inquiry" && <InquiryTab />}
 

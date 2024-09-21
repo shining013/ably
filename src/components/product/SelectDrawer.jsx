@@ -237,7 +237,7 @@ const SelectDrawer = ({ open, onClose }) => {
         </div>
       )}
       <div className="mt-auto">
-        {renderTotalResult()}
+        {!isSelecting && renderTotalResult()}
         {renderButtonGroup()}
       </div>
     </Drawer>
