@@ -140,7 +140,9 @@ const SelectDrawer = ({ open, onClose }) => {
           text="옵션 선택 닫기"
           option={"whiteType"}
           style={{ height: "56px" }}
-          onClick={() => onClose()}
+          onClick={() => {
+            onClose();
+          }}
         />
       );
     } else {
@@ -200,6 +202,15 @@ const SelectDrawer = ({ open, onClose }) => {
       setIsSelecting(false);
     }
   }, [options]);
+
+  useEffect(() => {
+    setIsSelecting(true);
+    setOptions({
+      color: null,
+      size: null,
+    });
+    setSelectedProducts([]);
+  }, [open]);
 
   return (
     <Drawer
