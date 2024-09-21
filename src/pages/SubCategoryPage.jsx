@@ -1,15 +1,24 @@
 import React from "react";
-import CardList from "src/components/common/CardList";
-import Card from "src/components/common/Card";
-import SubProductList from "src/components/subcategory/SubProductList";
 
-function CategoryPage() {
+import SubProductList from "src/components/subcategory/SubProductList";
+import TopInfo from "src/components/common/TopInfo";
+import TopNavbar from "src/components/common/TopNavbar";
+import RankingBar from "src/components/subcategory/RankingBar";
+import RankingSlide from "src/components/subcategory/RankingSlide";
+
+function SubCategoryPage() {
   return (
     <div>
-      CategoryPage
-      <SubProductList />
+      <TopInfo />
+      <TopNavbar title="귀걸이" />
+      {/* 실시간 귀걸이 랭킹 전체보기 바  */}
+      <RankingBar />
+
+      {/* <SubProductList /> */}
+
+      <RankingSlide />
     </div>
   );
 }
 
-export default CategoryPage;
+export default SubCategoryPage;
