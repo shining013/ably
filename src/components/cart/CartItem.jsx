@@ -7,18 +7,22 @@ function CartItem({
   checkEvent,
   changeEvent,
   changeOpen,
+  deleteEvent,
+  changeItemAmount,
   index,
 }) {
   const [isChecked, setIsChecked] = useState(false);
-  const [itemAmount, setItemAmount] = useState(productInfo.amount);
+  const [itemAmount, setItemAmount] = useState(0);
+  
   useEffect(()=>{
     setIsChecked(checked(productInfo))
-  },[checked])
+    setItemAmount(productInfo.amount);
+  },[checked, productInfo])
 
   return (
     <div className="w-full">
       <p className="pt-6 px-4 text-gray-70 text-lg font-semibold tracking-tighter leading-6">
-        {productInfo.company_name} 배송상품
+        {productInfo.companyName} 배송상품
       </p>
       <div className="w-full py-4 pr-6 pl-4">
         <div className="flex w-full">
@@ -30,7 +34,7 @@ function CartItem({
             style={{ color: "#9e9e9e" }}
           ></input>
           <img
-            src=""
+            src={productInfo.imgSrc}
             className="mr-4 rounded bg-gray-100 "
             style={{ width: "90px", height: "90px" }}
             alt=""
@@ -40,17 +44,17 @@ function CartItem({
               className="mb-1 text-gray-60 leading-4"
               style={{ fontSize: "13px" }}
             >
-              {productInfo.company_name}
+              {productInfo.companyName}
             </p>
             <p className="mb-1 text-gray-70 text-sm tracking-tight leading-5">
               {productInfo.name}
             </p>
             <div className="flex">
               <p className="mr-1 text-gray-50 tracking-tight leading-4">
-                <s>{parseInt(productInfo.price).toLocaleString("ko-KR")}원</s>
+                <s>{productInfo.price.toLocaleString("ko-KR")}원</s>
               </p>
               <p className="font-semibold tracking-tight leading-4">
-                {parseInt(productInfo.price - productInfo.sales).toLocaleString(
+                {((productInfo.price - Math.floor(productInfo.price * productInfo.discount / 100))).toLocaleString(
                   "ko-KR"
                 )}
                 원
@@ -60,6 +64,7 @@ function CartItem({
           <img
             src={require("src/assets/icons/delete.svg").default}
             className="w-5 h-5"
+            onClick={()=>{deleteEvent([productInfo])}}
             alt=""
           ></img>
         </div>
@@ -85,7 +90,7 @@ function CartItem({
                 changeOpen(true);
               }}
             />
-            <select className="w-full h-10 px-3 flex items-center relative border border-gray-300 rounded" key={productInfo.amount} defaultValue={productInfo.amount}>
+            <select className="w-full h-10 px-3 flex items-center relative border border-gray-300 rounded" onChange={(e)=>changeItemAmount(productInfo, e.target.value)} key={productInfo.amount} defaultValue={productInfo.amount}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -193,13 +198,13 @@ function CartItem({
       <hr />
       <p className="py-5 px-4 text-sm text-right tracking-tighter leading-6">
         상품{" "}
-        {isChecked?(parseInt(productInfo.price - productInfo.sales) * itemAmount).toLocaleString(
+        {isChecked?((productInfo.price - Math.floor(productInfo.price * productInfo.discount / 100)) * itemAmount).toLocaleString(
           "ko-KR"
         ) : 0}
         원 + 배송비 0원{" "}
         <b className="text-sm">
           ={" "}
-          {isChecked ? (parseInt(productInfo.price - productInfo.sales) * itemAmount).toLocaleString(
+          {isChecked ? ((productInfo.price - Math.floor(productInfo.price * productInfo.discount / 100)) * itemAmount).toLocaleString(
             "ko-KR"
           ) : 0}
           원
