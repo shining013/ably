@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import JewelryPage from "./pages/JewelryPage";
 import CartPage from "./pages/CartPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
 import SearchPage from "./pages/SearchPage";
 import SubCategoryPage from "./pages/SubCategoryPage";
 import ScrollToTop from "./components/common/ScrollToTop";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 const Router = () => {
   return (

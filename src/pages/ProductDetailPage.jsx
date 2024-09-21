@@ -11,15 +11,28 @@ import SlideComp from "src/components/main/SlideComp";
 import TopInfo from "src/components/common/TopInfo";
 import { products } from "src/data/products";
 import { useParams } from "react-router-dom";
+import InquiryTab from "src/components/product/InquiryTab";
 
 const ProductDetailPage = () => {
-  const { productId } = useParams(101);
+  const { productId } = useParams();
 
   const [productData, setProductData] = useState([]);
+  const [selectedTab, setSelectedTab] = useState([]);
+
+  const handleSelectedTab = (tabName) => {
+    setSelectedTab(tabName);
+  };
 
   useEffect(() => {
-    setProductData(products.filter((item) => item.id === Number(productId))[0]);
+    const product = products.find(
+      (item) => item.id === parseInt(productId, 10)
+    );
+    setProductData(product);
   }, [productId]);
+
+  if (!productData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -52,7 +65,8 @@ const ProductDetailPage = () => {
         <ReviewSection />
         <hr className="h-2 bg-gray-20" />
         <DeliveryInfo />
-        <DetailMenuTab />
+        <DetailMenuTab selectedTab={selectedTab} onClick={handleSelectedTab} />
+        {selectedTab === "inquiry" && <InquiryTab />}
 
         {/* 추천 상품 리스트 */}
         <br />
