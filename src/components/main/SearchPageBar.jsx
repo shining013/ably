@@ -1,9 +1,20 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import BackButton from "src/components/common/BackButton";
 
 function SearchPageBar() {
-  const navigation = useNavigate();
+  const [search, setSearch] = useState("");
+
+  const send = () => {
+    setSearch(search);
+    setSearch("");
+  };
+
+  const onChange = (e) => {
+    const inputText = e.target.value;
+    setSearch(inputText);
+  };
+
   return (
     <div
       className="flex w-full justify-center items-center bg-white relative"
@@ -38,8 +49,10 @@ function SearchPageBar() {
             fontSize: "14px",
             color: "black",
           }}
+          value={search}
+          onChange={onChange}
         ></input>
-        <img src="/images/xbox.svg" className="w-5 h-5" alt="" />
+        <img src="/images/xbox.svg" className="w-5 h-5" alt="" onClick={send} />
       </div>
     </div>
   );
