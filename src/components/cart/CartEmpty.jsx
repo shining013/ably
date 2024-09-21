@@ -2,8 +2,11 @@ import React from "react";
 import Button from "src/components/common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const CartEmpty = () => {
+  const navigation = useNavigate();
+  
   return (
     <div
       className="pt-32 w-full gap-y-2 flex flex-col justify-center items-center"
@@ -30,8 +33,9 @@ const CartEmpty = () => {
           style={{
             background: "#ff5160",
             width: "fit-content",
-            "min-width": "240px",
+            minWidth: "240px",
           }}
+          onClick={() => navigation("/")}
         />
       </div>
     </div>
