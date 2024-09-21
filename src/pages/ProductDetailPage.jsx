@@ -17,7 +17,7 @@ const ProductDetailPage = () => {
   const { productId } = useParams();
 
   const [productData, setProductData] = useState([]);
-  const [selectedTab, setSelectedTab] = useState([]);
+  const [selectedTab, setSelectedTab] = useState("info");
 
   const handleSelectedTab = (tabName) => {
     setSelectedTab(tabName);
