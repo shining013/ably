@@ -7,7 +7,12 @@ function CategoryList() {
   const categories = [
     { id: 1, name: "남자패션", imageSrc: "/images/Cate1.png", path: "fashion" },
     { id: 2, name: "의류", imageSrc: "/images/Cate2.png", path: "clothes" },
-    { id: 3, name: "주얼리", imageSrc: "/images/Cate3.png", path: "jewelry" },
+    {
+      id: 3,
+      name: "주얼리",
+      imageSrc: "/images/Cate3.png",
+      path: "category/:categoryId",
+    },
     { id: 4, name: "패션소품", imageSrc: "/images/Cate4.png", path: "props" },
     { id: 5, name: "빅사이즈", imageSrc: "/images/Cate5.png", path: "big" },
     { id: 6, name: "신발", imageSrc: "/images/Cate6.png", path: "shoes" },
