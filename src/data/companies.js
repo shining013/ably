@@ -2,12 +2,12 @@ const companies = [
   {
     id: 342,
     name: "234",
-    location: "도로명 주소",
+    location: "서울특별시 금천구 가산디지털1로 189",
   },
   {
     id: 5001,
     name: "a사",
-    location: "서울틀별시 금천구 가산디지털1로 171",
+    location: "서울특별시 금천구 가산디지털1로 189",
   },
   {
     id: 5002,
@@ -41,3 +41,5 @@ const companies = [
     location: "서울특별시 중구 세종대로 110",
   },
 ];
+
+export default companies;
