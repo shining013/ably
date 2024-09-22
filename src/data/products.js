@@ -4,7 +4,7 @@ export const products = [
 
     id: 100,
     name: "14K 레이어드 피어싱 105종 모음전",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -18,7 +18,7 @@ export const products = [
   {
     id: 101,
     name: "러블리 하트 귀걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 28800,
@@ -32,7 +32,7 @@ export const products = [
   {
     id: 102,
     name: "유리알 귀걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -46,7 +46,7 @@ export const products = [
   {
     id: 103,
     name: "하트큐빅 귀걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -61,7 +61,7 @@ export const products = [
   {
     id: 104,
     name: "원터치 링 귀걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "earing",
     description: "234",
     price: 27800,
@@ -77,7 +77,7 @@ export const products = [
   {
     id: 200,
     name: "스완목걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "necklace",
     description: "234",
     price: 15000,
@@ -91,7 +91,7 @@ export const products = [
   {
     id: 201,
     name: "리본목걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "necklace",
     description: "234",
     price: 27800,
@@ -105,7 +105,7 @@ export const products = [
   {
     id: 202,
     name: "클로버목걸이",
-    primeCategory: "jwerly",
+    primeCategory: "jewelry",
     subCategory: "necklace",
     description: "234",
     price: 27800,
@@ -119,8 +119,8 @@ export const products = [
   {
     id: 203,
     name: "투명 원석 목걸이",
-    primeCategory: "jwerly",
-    subCategory: "earing",
+    primeCategory: "jewelry",
+    subCategory: "necklace",
     description: "234",
     price: 27800,
     discount: 71,
@@ -133,16 +133,56 @@ export const products = [
   {
     id: 204,
     name: "원형 링 목걸이",
-    primeCategory: "jwerly",
-    subCategory: "earing",
+    primeCategory: "jewelry",
+    subCategory: "necklace",
     description: "234",
     price: 30000,
     discount: 30,
-    companyId: 1002,
+    companyId: 1001,
     companyName: "a사",
     imgSrc:
       "https://d3ha2047wt6x28.cloudfront.net/R-tYOSyxaG8/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE2XzE3MjY0Nzg5NzAxMTQ4NzRtLmpwZw",
     totalSales: 2500,
+  },
+  {
+    id: 205,
+    name: "[silver925] 데일리실버목걸이 은목걸이",
+    primeCategory: "jewelry",
+    subCategory: "necklace",
+    description: "블링블링 합니다",
+    price: 7000,
+    discount: 16,
+    companyId: 1001,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/juA804KTY40/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzAwZjYzMDk3MDRjMGFiM2Q5YjViMWZhMDViYzQwY2M3LmdpZg",
+    totalSales: 2454,
+  },
+  {
+    id: 206,
+    name: "당일출고[써지컬75종]변색X알러지X",
+    primeCategory: "jewelry",
+    subCategory: "necklace",
+    description: "변색 없습니다. 변상도 없습니다.",
+    price: 18000,
+    discount: 51,
+    companyId: 1002,
+    companyName: "b사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/KAhKQKNJfHQ/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjEwNjA0XzE2MjI3ODMwMDk1Nzk2MDRzLmdpZg",
+  },
+  {
+    id: 207,
+    name: "특가![숏&롱/가을팬츠/히든밴딩] 넛츠 하이",
+    primeCategory: "jewelry",
+    subCategory: "necklace",
+    description: "호핑호핑",
+    price: 15500,
+    discount: 0,
+    companyId: 1002,
+    companyName: "b사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/Ho07fUXHZo8/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzL2QyYTk3MzZmZGQzMWE1MTRjZjliYmU3MGYyZTlhNmQyLmdpZg",
   },
 
   //발찌

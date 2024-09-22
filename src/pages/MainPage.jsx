@@ -7,7 +7,6 @@ import TopInfo from "src/components/common/TopInfo";
 import CategoryList from "src/components/main/CategoryList";
 import SearchBar from "src/components/main/SearchBar";
 import Footer from "src/components/main/Footer";
-import TopNavbar from "src/components/common/TopNavbar";
 import RecommendCardList from "src/components/main/RecommendCardList";
 
 const MainPage = () => {
@@ -24,7 +23,7 @@ const MainPage = () => {
           <SearchBar />
         </div>
 
-        <div style={{ paddingTop: "10px" }}>
+        <div className="px-3" style={{ paddingTop: "10px" }}>
           <SlideComp />
           <CategoryList />
           <RecommendBox />
