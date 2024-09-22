@@ -23,7 +23,7 @@ const MainPage = () => {
           <SearchBar />
         </div>
 
-        <div style={{ paddingTop: "10px" }}>
+        <div className="px-3" style={{ paddingTop: "10px" }}>
           <SlideComp />
           <CategoryList />
           <RecommendBox />
