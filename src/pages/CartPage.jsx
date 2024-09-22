@@ -15,7 +15,7 @@ const CartPage = () => {
   //옵션버튼
   const [open, setOpen] = useState(false);
   const [itemOption, setItemOption] = useState(0);
-  const {totalItem, totalPrice, checkHandler, allCheckHandler, check, checkAll, deleteItem, changeItemAmount, refresh} = CartCRUD();
+  const {totalItem, totalPrice, checkHandler, allCheckHandler, check, checkAll, deleteItem, changeItemAmount, changeItemOption, refresh} = CartCRUD();
   const dummy = useSelector((s) => s.cartItems);
   
   useEffect(()=>{
@@ -54,8 +54,9 @@ const CartPage = () => {
         <OrderButton totalPrice={totalPrice} />
         <CartOptionSelect
           open={open}
-          onClose={() => setOpen(false)}
+          onClose={setOpen}
           item={dummy[itemOption]}
+          confirmChange={changeItemOption}
         />
       </div>
     );

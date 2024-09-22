@@ -3,17 +3,24 @@ import { Drawer } from "@material-tailwind/react";
 import Button from "../common/Button";
 import SelectDropdown from "../common/SelectDropdown";
 
-const CartOptionSelect = ({ open, onClose, item }) => {
-  const [selectedItem, setSelectedItem] = useState(0);
+const CartOptionSelect = ({ open, onClose, item, confirmChange }) => {
+  const [selectedOption, setSelectedOption] = useState({option1: item.option1, option2: item.option2});
 
   useEffect(() => {
-    setSelectedItem(item);
-  }, [item]);
+    // setSelectedItem(item);
+    setSelectedOption({option1: item.option1, option2: item.option2})
+    console.log(selectedOption);
+  }, [item, open]);
+
+  const changeItemOption = (name, option) =>{
+    if(name === 'option1'){ setSelectedOption({...selectedOption, option1: option})}
+    if(name === 'option2'){ setSelectedOption({...selectedOption, option2: option})}
+  }
 
   return (
     <Drawer
       open={open}
-      onClose={onClose}
+      onClose={() => onClose(false)}
       placement="bottom"
       size={600}
       className="w-full !max-w-[600px] !mx-auto left-auto !rounded-t-md p-4"
@@ -23,12 +30,16 @@ const CartOptionSelect = ({ open, onClose, item }) => {
     >
       <div className="flex flex-col gap-3">
         <SelectDropdown
-          defaultValue={selectedItem.option1}
+          value={selectedOption.option1}
+          name={"option1"}
           options={["beige", "white", "black"]}
+          onChange={changeItemOption}
         />
         <SelectDropdown
-          defaultValue={selectedItem.option2}
+          value={selectedOption.option2}
+          name={"option2"}
           options={["s", "m", "l"]}
+          onChange={changeItemOption}
         />
       </div>
 
@@ -40,12 +51,13 @@ const CartOptionSelect = ({ open, onClose, item }) => {
           text="취소"
           option={"whiteType"}
           style={{ height: "56px" }}
-          onClick={onClose}
+          onClick={() => onClose(false)}
         />
         <Button
           text="변경하기"
           option={"blackType"}
           style={{ background: "#ff5160", height: "56px" }}
+          onClick={()=>{confirmChange(item, selectedOption); onClose(false);}}
         />
       </div>
     </Drawer>

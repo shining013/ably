@@ -56,10 +56,13 @@ const CartCRUD = () =>{
     const changeItemAmount = (product, amount) => {
       dispatch({type: "changeItemAmount", payload:[product, amount]})
       setRefresh(!refresh);
-      console.log(product, amount);
+    };
+    const changeItemOption = (product, options) => {
+      dispatch({type: "changeItemOption", payload:[product, options]})
+      setRefresh(!refresh);
     };
 
-    return {totalItem, totalPrice, checkHandler, allCheckHandler, check, checkAll, deleteItem, changeItemAmount, refresh}
+    return {totalItem, totalPrice, checkHandler, allCheckHandler, check, checkAll, deleteItem, changeItemAmount, changeItemOption, refresh}
 
 
 }
