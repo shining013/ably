@@ -76,13 +76,16 @@ function SearchPageBar() {
         </div>
       </div>
       <div>
-        <div className="flex">
+        <div className="block" style={{ width: "600px" }}>
           {filteredTerms.length > 0 ? (
             <ul>
               {filteredTerms.map((term, i) => (
                 <div className="cursor-pointer p-4 font-bold flex container w-full">
                   <li key={i} className="flex justify-start items-start">
-                    <p className="m-0 gray-70">
+                    <p
+                      className="m-0 gray-70 block "
+                      style={{ fontWeight: "400", lineHeight: "20px" }}
+                    >
                       <span>
                         <b>{term}</b>
                       </span>
