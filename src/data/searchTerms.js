@@ -1,4 +1,4 @@
-const terms = [
+export const terms = [
   {
     id: 1,
     name: "주얼리",
