@@ -13,8 +13,8 @@ const init = {
     imgSrc:
       "https://d3ha2047wt6x28.cloudfront.net/QspnSsWwFpk/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjIxMjA3XzE2NzAzODE2NjU3MzE0OTZtLmpwZw",
     totalSales: 756,
-    option1: "none",
-    option2: "none",
+    option1: "beige",
+    option2: "s",
     amount : 2,
     },
     {
@@ -30,8 +30,8 @@ const init = {
       imgSrc:
         "https://d3ha2047wt6x28.cloudfront.net/CQX3Eu_3irg/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE2XzE3MjY0OTYwOTI2MTk1NDJtLmpwZw",
       totalSales: 5948,
-      option1: "none",
-      option2: "none",
+      option1: "white",
+      option2: "s",
       amount: 10
     },
     {
@@ -47,8 +47,8 @@ const init = {
       imgSrc:
         "https://d3ha2047wt6x28.cloudfront.net/o02dyzgxEGY/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwOTE2XzE3MjY0OTU5NTQ5MjgyNzFtLmpwZw",
       totalSales: 346,
-      option1: "none",
-      option2: "none",
+      option1: "beige",
+      option2: "l",
       amount: 1
     },
     {
@@ -65,8 +65,8 @@ const init = {
         "https://d3ha2047wt6x28.cloudfront.net/V_UGWhHjEOg/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwMTEzXzE3MDUxMTE5Mjc1NDUzNzZtLmpwZw",
   
       totalSales: 8549,
-      option1: "none",
-      option2: "none",
+      option1: "black",
+      option2: "m",
       amount: 3
     },
     {
@@ -82,13 +82,17 @@ const init = {
       imgSrc:
         "https://d3ha2047wt6x28.cloudfront.net/aY4fDrOyk9c/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzRiZTE0ZDc2M2ZhYTlmZDRkNzAzYWFiNmQyN2JkZTgxLmpwZw",
       totalSales: 5946,
-      option1: "none",
-      option2: "none",
+      option1: "black",
+      option2: "s",
       amount: 4
     },
   ],
-  totalItem : [],
-  refresh : true,
+
+  // 추후 삭제 가능
+  // totalItem : [],
+  // refresh : true,
+
+
 }
 
 const reducer = (state = init, action) => {
@@ -104,14 +108,26 @@ const reducer = (state = init, action) => {
     state.refresh = !state.refresh;
     return state;
   }
-  if (action.type === "addTotalItem") {
-    console.log(action.payload)
-    state.totalItem.push(action.payload);
-    console.log(state.totalItem)
+  if (action.type === "changeItemOption"){
+    let item = state.cartItems.find((item)=> item.id === action.payload[0].id);
+    item.option1 = action.payload[1].option1;
+    item.option2 = action.payload[1].option2;
+    state.refresh = !state.refresh;
+    return state;
   }
-  if(action.type === 'deleteTotalItem'){
-    return state.totalItem.filter((item) => item.id !== action.payload.id);
-  }
+
+  
+  // 추후 삭제 가능
+  // if (action.type === "addTotalItem") {
+  //   console.log(action.payload)
+  //   state.totalItem.push(action.payload);
+  //   console.log(state.totalItem)
+  // }
+  // if(action.type === 'deleteTotalItem'){
+  //   return state.totalItem.filter((item) => item.id !== action.payload.id);
+  // }
+
+
   return state;
 };
 
