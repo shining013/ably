@@ -89,7 +89,6 @@ function SlideComp() {
           display: "inline-table",
           textAlign: "center",
           color: "white",
-          fontSize: "13px",
         }}
       ></div>
     </div>
