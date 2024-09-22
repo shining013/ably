@@ -4,8 +4,13 @@ import Button from "../common/Button";
 import SelectedCard from "./SelectedCard";
 import SelectDropdown from "../common/SelectDropdown";
 import { enqueueSnackbar } from "notistack";
+import { useParams } from "react-router-dom";
+import { products } from "src/data/products";
+import { useDispatch, useSelector } from "react-redux";
 
 const SelectDrawer = ({ open, onClose }) => {
+  const cartItems = useSelector((state) => state.cartItems);
+  console.log(cartItems, "cart");
   const [isSelecting, setIsSelecting] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [options, setOptions] = useState({
@@ -18,7 +23,11 @@ const SelectDrawer = ({ open, onClose }) => {
   const totalPrice = selectedProducts.reduce((acc, cur) => {
     return acc + cur.price * cur.num;
   }, 0);
+  const { productId } = useParams();
+  const productData = products.find((item) => item.id === Number(productId));
+  const dispatch = useDispatch();
 
+  // 선택 상태 변경 핸들러(옵션 선택 화면 <-> 선택 결과 화면)
   const handleSelection = () => {
     setIsSelecting(true);
     setOptions({
@@ -27,6 +36,7 @@ const SelectDrawer = ({ open, onClose }) => {
     });
   };
 
+  // 옵션 변경 핸들러
   const handleOptions = (name, value) => {
     setOptions({
       ...options,
@@ -34,6 +44,7 @@ const SelectDrawer = ({ open, onClose }) => {
     });
   };
 
+  // 옵션 삭제 핸들러
   const handleProductDelete = (targetItem) => {
     const updatedSelectedProducts = selectedProducts.filter(
       (item) =>
@@ -42,6 +53,7 @@ const SelectDrawer = ({ open, onClose }) => {
     setSelectedProducts(updatedSelectedProducts);
   };
 
+  // 옵션 수량 감소 핸들러
   const handleProductMinus = (targetItem) => {
     const updatedSelectedProducts = selectedProducts.map((item) => {
       if (item.color === targetItem.color && item.size === targetItem.size) {
@@ -61,6 +73,7 @@ const SelectDrawer = ({ open, onClose }) => {
     setSelectedProducts(finalUpdatedProducts);
   };
 
+  // 옵션 수량 추가 핸들러
   const handleProductAdd = (targetItem) => {
     const updatedSelectedProducts = selectedProducts.map((item) => {
       if (item.color === targetItem.color && item.size === targetItem.size) {
@@ -104,6 +117,7 @@ const SelectDrawer = ({ open, onClose }) => {
       <div className="flex flex-col gap-3">
         {selectedProducts.map((item) => (
           <SelectedCard
+            key={item.id}
             size={item.size}
             color={item.color}
             price={item.price}
@@ -153,6 +167,7 @@ const SelectDrawer = ({ open, onClose }) => {
             option={"whiteType"}
             style={{ height: "56px" }}
             onClick={() => {
+              dispatch({ type: "addCart", payload: selectedProducts });
               enqueueSnackbar("장바구니에 상품을 담았어요");
               onClose();
             }}
@@ -169,8 +184,6 @@ const SelectDrawer = ({ open, onClose }) => {
 
   useEffect(() => {
     if (options && options.color && options.size) {
-      console.log(options);
-
       const targetItem = selectedProducts.find(
         (item) => item.color === options.color && item.size === options.size
       );
@@ -192,7 +205,7 @@ const SelectDrawer = ({ open, onClose }) => {
       // 새로운 선택 항목 추가
       else {
         const newSelectedProduct = {
-          price: 1000,
+          ...productData,
           num: 1,
           color: options.color,
           size: options.size,

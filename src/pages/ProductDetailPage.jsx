@@ -12,6 +12,8 @@ import TopInfo from "src/components/common/TopInfo";
 import { products } from "src/data/products";
 import { useParams } from "react-router-dom";
 import InquiryTab from "src/components/product/InquiryTab";
+import ProductDetailSection from "src/components/product/ProductDetailSection";
+import ProductSlide from "src/components/product/ProductSlide";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
@@ -48,7 +50,7 @@ const ProductDetailPage = () => {
 
       {/* 브랜드 정보 */}
       <div className="mb-[120px]">
-        <SlideComp />
+        <ProductSlide imgUrls={Array(3).fill(productData.imgSrc)} />
         <StoreInfo
           storeName={productData?.companyName}
           storeNickname={`${productData?.primeCategory} 맛집`}
@@ -72,7 +74,10 @@ const ProductDetailPage = () => {
 
         {/* 상품정보 & 리뷰 & 문의 탭 */}
         <DetailMenuTab selectedTab={selectedTab} onClick={handleSelectedTab} />
-        {selectedTab === "inquiry" && <InquiryTab />}
+        {selectedTab === "info" && <ProductDetailSection />}
+        {selectedTab === "inquiry" && (
+          <InquiryTab companyId={productData?.companyId} />
+        )}
 
         {/* 추천 상품 리스트 */}
         <br />
