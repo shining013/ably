@@ -4,8 +4,42 @@ import JewelryFilter from "src/components/jewelry/JewelryFilter";
 import TopNavbar from "src/components/common/TopNavbar";
 import TopInfo from "src/components/common/TopInfo";
 
+const jewelryTypes = [
+  {
+    imgSrc: "https://img.a-bly.com/categories/four_col_sub/265.jpg",
+    typeName: "귀걸이",
+    path: "earring",
+  },
+  {
+    imgSrc: "https://img.a-bly.com/categories/four_col_sub/266.jpg",
+    typeName: "목걸이",
+    path: "necklace",
+  },
+  {
+    imgSrc: "https://img.a-bly.com/categories/four_col_sub/267.jpg",
+    typeName: "반지",
+    path: "ring",
+  },
+  {
+    imgSrc: "https://img.a-bly.com/categories/four_col_sub/268.jpg",
+    typeName: "팔찌",
+    path: "bracelet",
+  },
+  {
+    imgSrc: "https://img.a-bly.com/categories/four_col_sub/513.jpg",
+    typeName: "발찌",
+    path: "anklet",
+  },
+  {
+    imgSrc: "https://img.a-bly.com/categories/four_col_sub/514.jpg",
+    typeName: "보석함",
+    path: "jewelry-box",
+  },
+];
+
 const JewelryPage = () => {
   const [selectedButton, setSelectedButton] = useState("all");
+
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -17,32 +51,16 @@ const JewelryPage = () => {
         <TopInfo />
         <TopNavbar title={"주얼리"} />
       </div>
-      <div className="flex h-10" style={{ backgroundColor: "black" }}></div>
+
       <div className="grid grid-cols-5 p-3 gap-5">
-        <JewelryType
-          imgsrc={"https://img.a-bly.com/categories/four_col_sub/265.jpg"}
-          typeName={"귀걸이"}
-        />
-        <JewelryType
-          imgsrc={"https://img.a-bly.com/categories/four_col_sub/266.jpg"}
-          typeName={"목걸이"}
-        />
-        <JewelryType
-          imgsrc={"https://img.a-bly.com/categories/four_col_sub/267.jpg"}
-          typeName={"반지"}
-        />
-        <JewelryType
-          imgsrc={"https://img.a-bly.com/categories/four_col_sub/268.jpg"}
-          typeName={"팔찌"}
-        />
-        <JewelryType
-          imgsrc={"https://img.a-bly.com/categories/four_col_sub/513.jpg"}
-          typeName={"발찌"}
-        />
-        <JewelryType
-          imgsrc={"https://img.a-bly.com/categories/four_col_sub/514.jpg"}
-          typeName={"보석함"}
-        />
+        {jewelryTypes.map((type) => (
+          <JewelryType
+            key={type.imgSrc}
+            imgsrc={type.imgSrc}
+            typeName={type.typeName}
+            path={type.path}
+          />
+        ))}
       </div>
       <div
         style={{
