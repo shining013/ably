@@ -184,79 +184,6 @@ export const products = [
     imgSrc:
       "https://d3ha2047wt6x28.cloudfront.net/Ho07fUXHZo8/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzL2QyYTk3MzZmZGQzMWE1MTRjZjliYmU3MGYyZTlhNmQyLmdpZg",
   },
-
-  //발찌
-  {
-    id: 501,
-    name: "여성용 럭키 패션 발찌",
-    primeCategory: "jewerly",
-    subCategory: "anklet",
-    description: "행운 상승.",
-    price: 16000,
-    discount: 10,
-    companyId: 5001,
-    companyName: "a사",
-    imgSrc:
-      "https://d3ha2047wt6x28.cloudfront.net/5JMpy4dIs70/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzYzNzI5MzI0ODhkZmVjYjE4OGRlYTA2ODNkZTA1ZDdlLmpwZw",
-    totalSales: 4946,
-  },
-  {
-    id: 502,
-    name: "하트 발찌",
-    primeCategory: "jewerly",
-    subCategory: "anklet",
-    description: "하트 모양 장식이 있습니다.",
-    price: 14000,
-    discount: 30,
-    companyId: 5002,
-    companyName: "b사",
-    imgSrc:
-      "https://d3ha2047wt6x28.cloudfront.net/2lzLkBN_9uQ/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODI0XzE3MjQ0Njc4NTcxOTgxMTdtLmpwZw",
-    totalSales: 2642,
-  },
-  {
-    id: 503,
-    name: "큐브 발찌",
-    primeCategory: "jewerly",
-    subCategory: "anklet",
-    description: "실버 제품입니다.",
-    price: 20000,
-    discount: 20,
-    companyId: 5001,
-    companyName: "a사",
-    imgSrc:
-      "https://d3ha2047wt6x28.cloudfront.net/lY0BTP-H9RY/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjEwNzA1XzE2MjU0OTU1MTc3NzQwOTNtLmpwZw",
-    totalSales: 2975,
-  },
-  {
-    id: 504,
-    name: "다이아몬드 발찌",
-    primeCategory: "jewerly",
-    subCategory: "anklet",
-    description: "튼튼해서 잘 안 끊어집니다.",
-    price: 16000,
-    discount: 15,
-    companyId: 5003,
-    companyName: "c사",
-    imgSrc:
-      "https://d3ha2047wt6x28.cloudfront.net/YqK40XToa_M/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjEwNjA5XzE2MjMxOTMxMzkzOTQyODhtLmpwZw",
-    totalSales: 1782,
-  },
-  {
-    id: 505,
-    name: "야광 발찌",
-    primeCategory: "jewerly",
-    subCategory: "anklet",
-    description: "밤에도 잘 보입니다",
-    price: 30000,
-    discount: 10,
-    companyId: 5004,
-    companyName: "d사",
-    imgSrc:
-      "https://thumbnail6.coupangcdn.com/thumbnails/remote/292x292q65ex/image/vendor_inventory/2e04/d6b5a115baf35b52f94af4f9b557d999ee44b9ebfaf3790e93f12225e2c4.jpg",
-    totalSales: 5642,
-  },
-
   //반지
   {
     id: 300,
@@ -331,6 +258,153 @@ export const products = [
       "https://d3ha2047wt6x28.cloudfront.net/WL765C-Xo_E/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODE0XzE3MjM2MzE2MjgwNTQ2MzltLmpwZw",
     totalSales: 7421,
   },
+
+  //팔찌
+  {
+    id: 400,
+    name: "은커플링 실버반지 우정반지 돌체",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description:
+      "심플한 디자인의 윤곽이 멋스러운 길리 입니다. 여성 반지에는 메인스톤과 서브스톤을 세팅하여 화려하지만 절제된 아름다움을 느끼게 해줍니다. 남성 반지에는 큐빅없이 라인을 강조해 부드럽고 세련된 느낌을 줍니다. 남여 디자인 구분없이, 취향에 맞는 제품을 선택 하시면 좋습니다.",
+    price: 130000,
+    discount: 50,
+    companyId: 5004,
+    companyName: "d사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/HaMlZcyMIhs/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzL2U5MzQyNDU3OWYzOTQ3NmI1ZmFjMjY0NTFmMzkxNWQyLmdpZg",
+    totalSales: 7421,
+  },
+  {
+    id: 401,
+    name: "은커플링 실버반지 우정반지 돌체",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description:
+      "심플한 디자인의 윤곽이 멋스러운 길리 입니다. 여성 반지에는 메인스톤과 서브스톤을 세팅하여 화려하지만 절제된 아름다움을 느끼게 해줍니다. 남성 반지에는 큐빅없이 라인을 강조해 부드럽고 세련된 느낌을 줍니다. 남여 디자인 구분없이, 취향에 맞는 제품을 선택 하시면 좋습니다.",
+    price: 130000,
+    discount: 50,
+    companyId: 5004,
+    companyName: "d사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/WL765C-Xo_E/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODE0XzE3MjM2MzE2MjgwNTQ2MzltLmpwZw",
+    totalSales: 7421,
+  },
+  {id: 402,
+    name: "은커플링 실버반지 우정반지 돌체",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description:
+      "심플한 디자인의 윤곽이 멋스러운 길리 입니다. 여성 반지에는 메인스톤과 서브스톤을 세팅하여 화려하지만 절제된 아름다움을 느끼게 해줍니다. 남성 반지에는 큐빅없이 라인을 강조해 부드럽고 세련된 느낌을 줍니다. 남여 디자인 구분없이, 취향에 맞는 제품을 선택 하시면 좋습니다.",
+    price: 130000,
+    discount: 50,
+    companyId: 5004,
+    companyName: "d사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/WL765C-Xo_E/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODE0XzE3MjM2MzE2MjgwNTQ2MzltLmpwZw",
+    totalSales: 7421,
+  },
+  {id: 403,
+    name: "은커플링 실버반지 우정반지 돌체",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description:
+      "심플한 디자인의 윤곽이 멋스러운 길리 입니다. 여성 반지에는 메인스톤과 서브스톤을 세팅하여 화려하지만 절제된 아름다움을 느끼게 해줍니다. 남성 반지에는 큐빅없이 라인을 강조해 부드럽고 세련된 느낌을 줍니다. 남여 디자인 구분없이, 취향에 맞는 제품을 선택 하시면 좋습니다.",
+    price: 130000,
+    discount: 50,
+    companyId: 5004,
+    companyName: "d사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/WL765C-Xo_E/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODE0XzE3MjM2MzE2MjgwNTQ2MzltLmpwZw",
+    totalSales: 7421,
+  },
+  {id: 404,
+    name: "은커플링 실버반지 우정반지 돌체",
+    primeCategory: "jewerly",
+    subCategory: "ring",
+    description:
+      "심플한 디자인의 윤곽이 멋스러운 길리 입니다. 여성 반지에는 메인스톤과 서브스톤을 세팅하여 화려하지만 절제된 아름다움을 느끼게 해줍니다. 남성 반지에는 큐빅없이 라인을 강조해 부드럽고 세련된 느낌을 줍니다. 남여 디자인 구분없이, 취향에 맞는 제품을 선택 하시면 좋습니다.",
+    price: 130000,
+    discount: 50,
+    companyId: 5004,
+    companyName: "d사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/WL765C-Xo_E/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODE0XzE3MjM2MzE2MjgwNTQ2MzltLmpwZw",
+    totalSales: 7421,
+  },
+
+  //발찌
+  {
+    id: 501,
+    name: "여성용 럭키 패션 발찌",
+    primeCategory: "jewerly",
+    subCategory: "anklet",
+    description: "행운 상승.",
+    price: 16000,
+    discount: 10,
+    companyId: 5001,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/5JMpy4dIs70/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzYzNzI5MzI0ODhkZmVjYjE4OGRlYTA2ODNkZTA1ZDdlLmpwZw",
+    totalSales: 4946,
+  },
+  {
+    id: 502,
+    name: "하트 발찌",
+    primeCategory: "jewerly",
+    subCategory: "anklet",
+    description: "하트 모양 장식이 있습니다.",
+    price: 14000,
+    discount: 30,
+    companyId: 5002,
+    companyName: "b사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/2lzLkBN_9uQ/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjQwODI0XzE3MjQ0Njc4NTcxOTgxMTdtLmpwZw",
+    totalSales: 2642,
+  },
+  {
+    id: 503,
+    name: "큐브 발찌",
+    primeCategory: "jewerly",
+    subCategory: "anklet",
+    description: "실버 제품입니다.",
+    price: 20000,
+    discount: 20,
+    companyId: 5001,
+    companyName: "a사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/lY0BTP-H9RY/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjEwNzA1XzE2MjU0OTU1MTc3NzQwOTNtLmpwZw",
+    totalSales: 2975,
+  },
+  {
+    id: 504,
+    name: "다이아몬드 발찌",
+    primeCategory: "jewerly",
+    subCategory: "anklet",
+    description: "튼튼해서 잘 안 끊어집니다.",
+    price: 16000,
+    discount: 15,
+    companyId: 5003,
+    companyName: "c사",
+    imgSrc:
+      "https://d3ha2047wt6x28.cloudfront.net/YqK40XToa_M/pr:GOODS_DETAIL/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzLzIwMjEwNjA5XzE2MjMxOTMxMzkzOTQyODhtLmpwZw",
+    totalSales: 1782,
+  },
+  {
+    id: 505,
+    name: "야광 발찌",
+    primeCategory: "jewerly",
+    subCategory: "anklet",
+    description: "밤에도 잘 보입니다",
+    price: 30000,
+    discount: 10,
+    companyId: 5004,
+    companyName: "d사",
+    imgSrc:
+      "https://thumbnail6.coupangcdn.com/thumbnails/remote/292x292q65ex/image/vendor_inventory/2e04/d6b5a115baf35b52f94af4f9b557d999ee44b9ebfaf3790e93f12225e2c4.jpg",
+    totalSales: 5642,
+  },
+
   {
     id: 601,
     name: "투명 보석함",

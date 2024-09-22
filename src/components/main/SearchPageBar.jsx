@@ -3,35 +3,35 @@ import { useState } from "react";
 import BackButton from "src/components/common/BackButton";
 import { terms } from "src/data/searchTerms";
 import { products } from "src/data/products";
+import Card from "../common/Card";
+import { useNavigate } from "react-router-dom";
 function SearchPageBar() {
   const [search, setSearch] = useState("");
   const [filteredTerms, setFilteredTerms] = useState([]);
 
   useEffect(() => {
     console.log(terms);
+    console.log(products);
   }, []);
   const send = () => {
     setSearch(search);
     setSearch("");
   };
-
+  const navigate = useNavigate();
   const onChange = (e) => {
     const inputText = e.target.value;
     setSearch(inputText);
     if (inputText.trim()) {
-      const filtered = terms
-        .filter((item) => item.name.includes(inputText))
-        .flatMap((item) => item.terms);
-      const filtered2 = products
-        .filter((item) => item.name.includes(inputText))
-        .flatMap((item) => item.name);
-      const combinedResults = [...filtered, ...filtered2];
+      const filtered = products.filter((item) =>
+        item.name.includes(inputText)
+      );
+      const combinedResults = [...filtered];
       setFilteredTerms(combinedResults);
     } else {
       setFilteredTerms([]);
     }
   };
-
+  
   return (
     <>
       <div
@@ -89,8 +89,16 @@ function SearchPageBar() {
                       className="m-0 gray-70 block "
                       style={{ fontWeight: "400", lineHeight: "20px" }}
                     >
-                      <span>
-                        <b>{term}</b>
+                      <span key={term.id}>
+                        <b
+                          onClick={() => {
+                            navigate("/product/" + term.id);
+                            console.log(term.id);
+                            console.log(term);
+                          }}
+                        >
+                          {term.name}
+                        </b>
                       </span>
                     </p>
                   </li>
