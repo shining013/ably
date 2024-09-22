@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import BackButton from "src/components/common/BackButton";
 import { terms } from "src/data/searchTerms";
-
+import { products } from "src/data/products";
 function SearchPageBar() {
   const [search, setSearch] = useState("");
   const [filteredTerms, setFilteredTerms] = useState([]);
@@ -22,8 +22,11 @@ function SearchPageBar() {
       const filtered = terms
         .filter((item) => item.name.includes(inputText))
         .flatMap((item) => item.terms);
-
-      setFilteredTerms(filtered);
+      const filtered2 = products
+        .filter((item) => item.name.includes(inputText))
+        .flatMap((item) => item.name);
+      const combinedResults = [...filtered, ...filtered2];
+      setFilteredTerms(combinedResults);
     } else {
       setFilteredTerms([]);
     }
