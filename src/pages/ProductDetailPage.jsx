@@ -12,6 +12,7 @@ import TopInfo from "src/components/common/TopInfo";
 import { products } from "src/data/products";
 import { useParams } from "react-router-dom";
 import InquiryTab from "src/components/product/InquiryTab";
+import ProductDetailSection from "src/components/product/ProductDetailSection";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
@@ -72,6 +73,7 @@ const ProductDetailPage = () => {
 
         {/* 상품정보 & 리뷰 & 문의 탭 */}
         <DetailMenuTab selectedTab={selectedTab} onClick={handleSelectedTab} />
+        {selectedTab === "info" && <ProductDetailSection />}
         {selectedTab === "inquiry" && <InquiryTab />}
 
         {/* 추천 상품 리스트 */}
