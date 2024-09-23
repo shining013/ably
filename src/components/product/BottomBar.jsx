@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Button from "src/components/common/Button";
 import heartIcon from "src/assets/icons/heart.svg";
 import SelectDrawer from "./SelectDrawer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const BottomBar = () => {
   const [open, setOpen] = useState(false);
@@ -33,10 +35,9 @@ const BottomBar = () => {
         <div
           className={`text-center py-2 text-subtitle3 text-gray-60 transition-all duration-500 ${
             isVisible ? "opacity-100 max-h-10" : "opacity-0 max-h-0"
-          }`}
+          } overflow-hidden`}
           style={{
-            overflow: "hidden",
-            transition: "all 0.3s ease", // height와 opacity에 애니메이션 적용
+            transition: "opacity 0.5s ease, max-height 0.5s ease",
           }}
         >
           1명이 이 상품을 구매하는 중이에요
@@ -56,6 +57,39 @@ const BottomBar = () => {
         </div>
       </div>
       <SelectDrawer open={open} onClose={() => setOpen(false)} />
+      {/* 위/아래 스크롤 버튼 */}
+      <div
+        className={`sticky bottom-[130px] z-50 flex flex-col items-end gap-2 pr-2 transition-all duration-500 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          transition: "opacity 0.5s ease",
+        }}
+      >
+        {/* 위로 스크롤 버튼 */}
+        <button
+          className="bg-white p-3 rounded-full shadow-lg mb-2 w-8 h-8 flex items-center justify-center shadow-[0px 4px 10px rgba(0, 0, 0, 0.1)]"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <FontAwesomeIcon icon={faArrowUp} className="text-gray-500 w-4 h-4" />
+        </button>
+
+        {/* 아래로 스크롤 버튼 */}
+        <button
+          className="bg-white p-3 rounded-full shadow-lg w-8 h-8 flex items-center justify-center shadow-[0px 4px 10px rgba(0, 0, 0, 0.1)]"
+          onClick={() =>
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            })
+          }
+        >
+          <FontAwesomeIcon
+            icon={faArrowDown}
+            className="text-gray-500 w-4 h-4"
+          />
+        </button>
+      </div>
     </>
   );
 };

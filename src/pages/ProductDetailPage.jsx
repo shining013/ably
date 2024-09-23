@@ -14,6 +14,8 @@ import InquiryTab from "src/components/product/InquiryTab";
 import ProductDetailSection from "src/components/product/ProductDetailSection";
 import ProductSlide from "src/components/product/ProductSlide";
 import ReviewTab from "src/components/product/ReviewTab";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
@@ -48,9 +50,7 @@ const ProductDetailPage = () => {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
