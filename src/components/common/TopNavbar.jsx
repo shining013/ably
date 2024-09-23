@@ -16,7 +16,7 @@ function TopNavbar({ title }) {
   }, [cartItem]);
 
   return (
-    <div className="w-full mt-2 mb-1 h-11 relative flex justify-center items-center bg-white">
+    <div className="w-full p-2 mb-1 h-12 relative flex justify-center items-center bg-white">
       <div className="absolute left-2 flex justify-center items-center">
         <BackButton />
       </div>
