@@ -26,18 +26,18 @@ const companies = [
   },
 
   {
-    id: 1001,
-    name: "d사",
+    id: 5005,
+    name: "e사",
     location: "서울특별시 중구 세종대로 110",
   },
   {
-    id: 1002,
-    name: "d사",
+    id: 5006,
+    name: "f사",
     location: "서울특별시 중구 세종대로 110",
   },
   {
-    id: 1003,
-    name: "d사",
+    id: 5007,
+    name: "g사",
     location: "서울특별시 중구 세종대로 110",
   },
 ];
