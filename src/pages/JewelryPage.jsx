@@ -10,7 +10,7 @@ const jewelryTypes = [
   {
     imgSrc: "https://img.a-bly.com/categories/four_col_sub/265.jpg",
     typeName: "귀걸이",
-    path: "/subcategory/earring",
+    path: "/subcategory/earing",
   },
   {
     imgSrc: "https://img.a-bly.com/categories/four_col_sub/266.jpg",
