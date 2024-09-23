@@ -1,8 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const navigation = useNavigate();
+  const cartItem = useSelector((s) => s.cartItems);
   return (
     <div
       className="flex w-full justify-center items-center bg-white relative"
@@ -52,6 +54,16 @@ function SearchBar() {
           style={{ width: "24px", height: "24px", fill: "none" }}
           alt=""
         ></img>
+        {cartItem.length === 0 ? null : (
+          <div
+            className="absolute w-4 h-4 flex items-center justify-center bg-pink-30 rounded-lg"
+            style={{ top: "14px", right: "0px" }}
+          >
+            <p className="text-center text-white " style={{ fontSize: "9px" }}>
+              {cartItem.length}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
