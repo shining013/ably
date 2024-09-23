@@ -3,37 +3,39 @@ import JewelryType from "../components/jewelry/JewelryType";
 import JewelryFilter from "src/components/jewelry/JewelryFilter";
 import TopNavbar from "src/components/common/TopNavbar";
 import TopInfo from "src/components/common/TopInfo";
+import RecommendBox from "src/components/main/RecommendBox";
+import CardList from "src/components/common/CardList";
 
 const jewelryTypes = [
   {
     imgSrc: "https://img.a-bly.com/categories/four_col_sub/265.jpg",
     typeName: "귀걸이",
-    path: "earring",
+    path: "/subcategory/earring",
   },
   {
     imgSrc: "https://img.a-bly.com/categories/four_col_sub/266.jpg",
     typeName: "목걸이",
-    path: "necklace",
+    path: "/subcategory/necklace",
   },
   {
     imgSrc: "https://img.a-bly.com/categories/four_col_sub/267.jpg",
     typeName: "반지",
-    path: "ring",
+    path: "/subcategory/ring",
   },
   {
     imgSrc: "https://img.a-bly.com/categories/four_col_sub/268.jpg",
     typeName: "팔찌",
-    path: "bracelet",
+    path: "/subcategory/bracelet",
   },
   {
     imgSrc: "https://img.a-bly.com/categories/four_col_sub/513.jpg",
     typeName: "발찌",
-    path: "anklet",
+    path: "/subcategory/anklet",
   },
   {
     imgSrc: "https://img.a-bly.com/categories/four_col_sub/514.jpg",
     typeName: "보석함",
-    path: "jewelry-box",
+    path: "/subcategory/jewelry-box",
   },
 ];
 
@@ -118,19 +120,14 @@ const JewelryPage = () => {
           브랜드
         </div>
       </div>
-      <div
-        className="flex gap-3 pt-3 pb-[11px]"
-        style={{
-          borderBottomColor: "rgb(238, 238, 238)",
-          borderBottomStyle: "solid",
-          borderBottomWidth: "0.8px",
-        }}
-      >
+      <div className="flex gap-3 pt-3 pb-[11px] px-4">
         <JewelryFilter title="추천순"></JewelryFilter>
         <JewelryFilter title="가격"></JewelryFilter>
         <JewelryFilter title="색상"></JewelryFilter>
         <JewelryFilter title="키·연령"></JewelryFilter>
       </div>
+      <RecommendBox />
+      <CardList />
     </div>
   );
 };

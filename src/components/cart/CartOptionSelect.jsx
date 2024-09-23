@@ -2,20 +2,28 @@ import React, { useEffect, useState } from "react";
 import { Drawer } from "@material-tailwind/react";
 import Button from "../common/Button";
 import SelectDropdown from "../common/SelectDropdown";
+import { useDispatch } from "react-redux";
 
-const CartOptionSelect = ({ open, onClose, item, confirmChange }) => {
-  const [selectedOption, setSelectedOption] = useState({option1: item.option1, option2: item.option2});
+const CartOptionSelect = ({ open, onClose, item }) => {
+  const dispatch = useDispatch();
+  const [selectedOption, setSelectedOption] = useState({
+    option1: item.option1,
+    option2: item.option2,
+  });
 
   useEffect(() => {
-    // setSelectedItem(item);
-    setSelectedOption({option1: item.option1, option2: item.option2})
+    setSelectedOption({ option1: item.option1, option2: item.option2 });
     console.log(selectedOption);
   }, [item, open]);
 
-  const changeItemOption = (name, option) =>{
-    if(name === 'option1'){ setSelectedOption({...selectedOption, option1: option})}
-    if(name === 'option2'){ setSelectedOption({...selectedOption, option2: option})}
-  }
+  const changeItemOption = (name, option) => {
+    if (name === "option1") {
+      setSelectedOption({ ...selectedOption, option1: option });
+    }
+    if (name === "option2") {
+      setSelectedOption({ ...selectedOption, option2: option });
+    }
+  };
 
   return (
     <Drawer
@@ -57,7 +65,13 @@ const CartOptionSelect = ({ open, onClose, item, confirmChange }) => {
           text="변경하기"
           option={"blackType"}
           style={{ background: "#ff5160", height: "56px" }}
-          onClick={()=>{confirmChange(item, selectedOption); onClose(false);}}
+          onClick={() => {
+            dispatch({
+              type: "changeItemOption",
+              payload: [item, selectedOption],
+            });
+            onClose(false);
+          }}
         />
       </div>
     </Drawer>

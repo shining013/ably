@@ -1,23 +1,37 @@
 import React, { useEffect, useState } from "react";
 import Button from "../common/Button";
+import { useDispatch, useSelector } from "react-redux";
 
 function CartItem({
   productInfo,
-  checked,
-  checkEvent,
   changeEvent,
   changeOpen,
   deleteEvent,
-  changeItemAmount,
   index,
 }) {
   const [isChecked, setIsChecked] = useState(false);
   const [itemAmount, setItemAmount] = useState(0);
-  
-  useEffect(()=>{
-    setIsChecked(checked(productInfo))
+  const dispatch = useDispatch();
+  const totalItem = useSelector((s) => s.totalItem);
+  const refresh = useSelector((s) => s.refresh);
+
+  const checkHandler = (isChecked) => {
+    if (isChecked) {
+      dispatch({ type: "addTotalItem", payload: productInfo });
+    } else {
+      dispatch({ type: "deleteTotalItem", payload: productInfo });
+    }
+  };
+  const check = (itemChecked) => {
+    return totalItem.some((item) => {
+      return item.id === itemChecked.id;
+    });
+  };
+
+  useEffect(() => {
+    setIsChecked(check(productInfo));
     setItemAmount(productInfo.amount);
-  },[checked, productInfo])
+  }, [check, productInfo, refresh]);
 
   return (
     <div className="w-full">
@@ -30,7 +44,9 @@ function CartItem({
             type="checkbox"
             className="w-4 h-4 mr-4 self-center"
             checked={isChecked}
-            onChange={(e) => {checkEvent(e.target.checked, productInfo); }}
+            onChange={(e) => {
+              checkHandler(e.target.checked);
+            }}
             style={{ color: "#9e9e9e" }}
           ></input>
           <img
@@ -54,9 +70,10 @@ function CartItem({
                 <s>{productInfo.price.toLocaleString("ko-KR")}원</s>
               </p>
               <p className="font-semibold tracking-tight leading-4">
-                {((productInfo.price - Math.floor(productInfo.price * productInfo.discount / 100))).toLocaleString(
-                  "ko-KR"
-                )}
+                {(
+                  productInfo.price -
+                  Math.floor((productInfo.price * productInfo.discount) / 100)
+                ).toLocaleString("ko-KR")}
                 원
               </p>
             </div>
@@ -64,7 +81,9 @@ function CartItem({
           <img
             src={require("src/assets/icons/delete.svg").default}
             className="w-5 h-5"
-            onClick={()=>{deleteEvent([productInfo])}}
+            onClick={() => {
+              deleteEvent([productInfo]);
+            }}
             alt=""
           ></img>
         </div>
@@ -90,7 +109,17 @@ function CartItem({
                 changeOpen(true);
               }}
             />
-            <select className="w-full h-10 px-3 flex items-center relative border border-gray-300 rounded" onChange={(e)=>changeItemAmount(productInfo, e.target.value)} key={productInfo.amount} defaultValue={productInfo.amount}>
+            <select
+              className="w-full h-10 px-3 flex items-center relative border border-gray-300 rounded"
+              onChange={(e) =>
+                dispatch({
+                  type: "changeItemAmount",
+                  payload: [productInfo, e.target.value],
+                })
+              }
+              key={productInfo.amount}
+              defaultValue={productInfo.amount}
+            >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -198,15 +227,25 @@ function CartItem({
       <hr />
       <p className="py-5 px-4 text-sm text-right tracking-tighter leading-6">
         상품{" "}
-        {isChecked?((productInfo.price - Math.floor(productInfo.price * productInfo.discount / 100)) * itemAmount).toLocaleString(
-          "ko-KR"
-        ) : 0}
+        {isChecked
+          ? (
+              (productInfo.price -
+                Math.floor((productInfo.price * productInfo.discount) / 100)) *
+              itemAmount
+            ).toLocaleString("ko-KR")
+          : 0}
         원 + 배송비 0원{" "}
         <b className="text-sm">
           ={" "}
-          {isChecked ? ((productInfo.price - Math.floor(productInfo.price * productInfo.discount / 100)) * itemAmount).toLocaleString(
-            "ko-KR"
-          ) : 0}
+          {isChecked
+            ? (
+                (productInfo.price -
+                  Math.floor(
+                    (productInfo.price * productInfo.discount) / 100
+                  )) *
+                itemAmount
+              ).toLocaleString("ko-KR")
+            : 0}
           원
         </b>
       </p>

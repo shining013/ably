@@ -1,7 +1,7 @@
 const companies = [
   {
-    id: 342,
-    name: "234",
+    id: 5000,
+    name: "abc사",
     location: "서울특별시 금천구 가산디지털1로 189",
   },
   {
@@ -26,18 +26,18 @@ const companies = [
   },
 
   {
-    id: 1001,
-    name: "d사",
+    id: 5005,
+    name: "e사",
     location: "서울특별시 중구 세종대로 110",
   },
   {
-    id: 1002,
-    name: "d사",
+    id: 5006,
+    name: "f사",
     location: "서울특별시 중구 세종대로 110",
   },
   {
-    id: 1003,
-    name: "d사",
+    id: 5007,
+    name: "g사",
     location: "서울특별시 중구 세종대로 110",
   },
 ];

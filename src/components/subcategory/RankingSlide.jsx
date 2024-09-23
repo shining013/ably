@@ -18,7 +18,7 @@ export default function App() {
     <>
       <Swiper
         slidesPerView={4.5}
-        spaceBetween={20}
+        spaceBetween={10}
         freeMode={true}
         modules={[FreeMode, Pagination]}
         className="mySwiper"
