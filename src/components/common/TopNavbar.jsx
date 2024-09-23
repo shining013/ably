@@ -11,9 +11,7 @@ function TopNavbar({ title }) {
   const navigation = useNavigate();
   const cartItem = useSelector((s) => s.cartItems);
 
-  useEffect(() => {
-    console.log(cartItem.length);
-  }, [cartItem]);
+  useEffect(() => {}, [cartItem]);
 
   return (
     <div className="w-full p-2 mb-1 h-12 relative flex justify-center items-center bg-white">
@@ -42,7 +40,7 @@ function TopNavbar({ title }) {
           />
           {cartItem.length === 0 ? null : (
             <div
-              className="absolute w-4 h-4 align-middle bg-pink-30 rounded-lg"
+              className="absolute w-4 h-4 flex items-center justify-center bg-pink-30 rounded-lg"
               style={{ top: "0px", right: "2px" }}
             >
               <p

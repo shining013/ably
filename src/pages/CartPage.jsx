@@ -15,22 +15,27 @@ const CartPage = () => {
   //옵션버튼
   const [open, setOpen] = useState(false);
   const [itemOption, setItemOption] = useState(0);
-  const {totalItem, totalPrice, checkHandler, allCheckHandler, check, checkAll, deleteItem, changeItemAmount, changeItemOption, refresh} = CartCRUD();
+
+  const totalItem = useSelector((s) => s.totalItem);
+  const refresh = useSelector((s) => s.refresh);
   const dummy = useSelector((s) => s.cartItems);
-  
-  useEffect(()=>{
+
+  const {
+    totalPrice,
+
+    deleteItem,
+  } = CartCRUD();
+
+  useEffect(() => {
     console.log(totalItem);
-    console.log(dummy);
-  }, [totalItem, dummy, refresh])
+  }, [totalItem, dummy, refresh]);
 
   const cartPageComponents = () => {
     return (
       <div className="pb-20">
         <CartSelectBar
-          totalItem={dummy.length}
-          selectItem={totalItem}
-          checkAll={checkAll}
-          checkAllEvent={allCheckHandler}
+          cartItem={dummy}
+          totalItem={totalItem}
           deleteEvent={deleteItem}
         />
         {dummy.map((item, i) => {
@@ -38,25 +43,21 @@ const CartPage = () => {
             <div key={i}>
               <CartItem
                 productInfo={item}
-                checked={check}
-                checkEvent={checkHandler}
                 changeEvent={setItemOption}
                 changeOpen={setOpen}
                 deleteEvent={deleteItem}
-                changeItemAmount={changeItemAmount}
                 index={i}
               />
             </div>
           );
         })}
         <CartTotal totalItem={totalItem} />
-        <CartResult totalItem={totalItem} totalPrice={totalPrice}/>
+        <CartResult totalItem={totalItem} totalPrice={totalPrice} />
         <OrderButton totalPrice={totalPrice} />
         <CartOptionSelect
           open={open}
           onClose={setOpen}
           item={dummy[itemOption]}
-          confirmChange={changeItemOption}
         />
       </div>
     );

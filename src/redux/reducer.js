@@ -88,31 +88,41 @@ const init = {
     },
   ],
 
-  // 추후 삭제 가능
-  // totalItem : [],
-  // refresh : true,
+  // 장바구니 페이지 선택 아이템
+  totalItem: [],
+  refresh: false,
 };
 
 const reducer = (state = init, action) => {
   if (action.type === "delete") {
-    action.payload.map((i) => {
+    const res = action.payload.map((i) => {
       state.cartItems = state.cartItems.filter((item) => i.id !== item.id);
     });
+    console.log(res);
+    console.log(action.payload);
     console.log(state.cartItems);
-    return state;
+    return {
+      ...state,
+      totalItem: [],
+      refresh: !state.refresh,
+    };
   }
   if (action.type === "changeItemAmount") {
     state.cartItems.find((item) => item.id === action.payload[0].id).amount =
       action.payload[1];
-    state.refresh = !state.refresh;
-    return state;
+    return {
+      ...state,
+      refresh: !state.refresh,
+    };
   }
   if (action.type === "changeItemOption") {
     let item = state.cartItems.find((item) => item.id === action.payload[0].id);
     item.option1 = action.payload[1].option1;
     item.option2 = action.payload[1].option2;
-    state.refresh = !state.refresh;
-    return state;
+    return {
+      ...state,
+      refresh: !state.refresh,
+    };
   }
 
   // 옵션 선택 후 장바구니 담기
@@ -182,15 +192,35 @@ const reducer = (state = init, action) => {
     };
   }
 
-  // 추후 삭제 가능
-  // if (action.type === "addTotalItem") {
-  //   console.log(action.payload)
-  //   state.totalItem.push(action.payload);
-  //   console.log(state.totalItem)
-  // }
-  // if(action.type === 'deleteTotalItem'){
-  //   return state.totalItem.filter((item) => item.id !== action.payload.id);
-  // }
+  // 장바구니 선택 항목
+  if (action.type === "addTotalItem") {
+    state.totalItem.push(action.payload);
+    return {
+      ...state,
+      refresh: !state.refresh,
+    };
+  }
+  if (action.type === "deleteTotalItem") {
+    state.totalItem = state.totalItem.filter(
+      (item) => item.id !== action.payload.id
+    );
+    return {
+      ...state,
+      refresh: !state.refresh,
+    };
+  }
+  if (action.type === "cleanTotalItem") {
+    return {
+      ...state,
+      totalItem: [],
+    };
+  }
+  if (action.type === "fillTotalItem") {
+    return {
+      ...state,
+      totalItem: state.cartItems,
+    };
+  }
 
   return state;
 };
