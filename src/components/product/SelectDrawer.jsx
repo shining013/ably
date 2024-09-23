@@ -114,7 +114,7 @@ const SelectDrawer = ({ open, onClose }) => {
   // 선택된 상품 리스트
   const renderSelectedProducts = () => {
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 h-[300px] overflow-auto">
         {selectedProducts.map((item) => (
           <SelectedCard
             key={item.id}
