@@ -10,7 +10,7 @@ const InquiryTab = ({ companyId }) => {
 
   return (
     <div>
-      <ProductDetailSection option={"company"} />
+      <ProductDetailSection option={"company"} data={companyData} />
       <div className="px-5">
         <MapContainer address={companyData?.location} />
       </div>

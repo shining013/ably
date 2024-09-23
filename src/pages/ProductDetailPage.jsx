@@ -75,7 +75,9 @@ const ProductDetailPage = () => {
 
         {/* 상품정보 & 리뷰 & 문의 탭 */}
         <DetailMenuTab selectedTab={selectedTab} onClick={handleSelectedTab} />
-        {selectedTab === "info" && <ProductDetailSection />}
+        {selectedTab === "info" && (
+          <ProductDetailSection option="product" data={productData} />
+        )}
         {selectedTab === "review" && <ReviewTab productData={productData} />}
         {selectedTab === "inquiry" && (
           <InquiryTab companyId={productData?.companyId} />
