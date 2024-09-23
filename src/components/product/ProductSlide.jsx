@@ -20,9 +20,9 @@ function ProductSlide({ imgUrls = [] }) {
         modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
-        {imgUrls.map((url) => {
+        {imgUrls.map((url, index) => {
           return (
-            <SwiperSlide key={url}>
+            <SwiperSlide key={index}>
               <img
                 src={url}
                 alt={url}

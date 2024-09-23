@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import TopNavbar from "src/components/common/TopNavbar";
 import StoreInfo from "src/components/product/StoreInfo";
 import ProductInfo from "src/components/product/ProductInfo";
@@ -7,7 +7,6 @@ import BottomBar from "src/components/product/BottomBar";
 import ReviewSection from "src/components/product/ReviewSection";
 import DetailMenuTab from "src/components/product/DetailMenuTab";
 import RecommendSection from "src/components/product/RecommendSection";
-import SlideComp from "src/components/main/SlideComp";
 import TopInfo from "src/components/common/TopInfo";
 import { products } from "src/data/products";
 import { useParams } from "react-router-dom";
@@ -15,12 +14,16 @@ import InquiryTab from "src/components/product/InquiryTab";
 import ProductDetailSection from "src/components/product/ProductDetailSection";
 import ProductSlide from "src/components/product/ProductSlide";
 import ReviewTab from "src/components/product/ReviewTab";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
-
   const [productData, setProductData] = useState([]);
   const [selectedTab, setSelectedTab] = useState("info");
+  const [isSticky, setIsSticky] = useState(false); // DetailMenuTab의 고정 상태를 관리
+  const detailMenuTabRef = useRef(null); // DetailMenuTab에 대한 참조
+  const placeholderRef = useRef(null); // DetailMenuTab의 원래 위치를 위한 참조
 
   const handleSelectedTab = (tabName) => {
     setSelectedTab(tabName);
@@ -32,6 +35,26 @@ const ProductDetailPage = () => {
     );
     setProductData(product);
   }, [productId]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (detailMenuTabRef.current && placeholderRef.current) {
+        const detailMenuTabRect =
+          placeholderRef.current.getBoundingClientRect();
+
+        if (detailMenuTabRect.top <= 50) {
+          // TopNavbar의 높이를 고려하여 50px 정도로 설정
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   if (!productData) {
     return <div>Loading...</div>;
@@ -74,7 +97,26 @@ const ProductDetailPage = () => {
         <DeliveryInfo />
 
         {/* 상품정보 & 리뷰 & 문의 탭 */}
-        <DetailMenuTab selectedTab={selectedTab} onClick={handleSelectedTab} />
+        {/* placeholderRef를 사용하여 DetailMenuTab의 원래 위치를 유지 */}
+        <div ref={placeholderRef} />
+        <div
+          ref={detailMenuTabRef}
+          className={`${
+            isSticky
+              ? "sticky top-[105px] w-full z-50 bg-white max-w-[600px]" // TopNavbar 바로 아래에 고정
+              : "relative"
+          }`}
+          style={{
+            left: "0",
+            transition: "top 0.3s ease-in-out",
+          }}
+        >
+          <DetailMenuTab
+            selectedTab={selectedTab}
+            onClick={handleSelectedTab}
+          />
+        </div>
+
         {selectedTab === "info" && (
           <ProductDetailSection option="product" data={productData} />
         )}
