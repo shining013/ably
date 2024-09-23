@@ -13,6 +13,7 @@ const Bottombar = () => {
       <div className="w-1/4 h-6 py-1 flex-col justify-center items-center">
         <img
           src="./images/bottomNav2.svg"
+          alt=""
           className="mx-auto justify-center w-6"
         />
         <p className="items-center text-center text-gray-500 text-xs">
@@ -22,6 +23,7 @@ const Bottombar = () => {
       <div className="w-1/4 h-6 py-1 flex-col justify-center items-center">
         <img
           src="./images/bottomNav3.svg"
+          alt=""
           className="mx-auto justify-center w-6"
         />
         <p className="items-center text-center text-gray-500 text-xs">검색</p>
@@ -29,6 +31,7 @@ const Bottombar = () => {
       <div className="w-1/4 h-6 py-1 flex-col justify-center items-center">
         <img
           src="./images/bottomNav4.svg"
+          alt=""
           className="mx-auto justify-center w-6"
         />
         <p className="items-center text-center text-gray-500 text-xs">
