@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 
 import SubProductList from "src/components/subcategory/SubProductList";
 import TopInfo from "src/components/common/TopInfo";
@@ -7,8 +7,6 @@ import RankingBar from "src/components/subcategory/RankingBar";
 import RankingSlide from "src/components/subcategory/RankingSlide";
 import JewelryFilter from "src/components/jewelry/JewelryFilter";
 import { useParams } from "react-router-dom";
-
-import CardList from "src/components/common/CardList";
 
 function SubCategoryPage() {
   const [selectedButton, setSelectedButton] = useState("all");
