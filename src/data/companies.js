@@ -1,7 +1,7 @@
 const companies = [
   {
-    id: 342,
-    name: "234",
+    id: 5000,
+    name: "abc사",
     location: "서울특별시 금천구 가산디지털1로 189",
   },
   {
