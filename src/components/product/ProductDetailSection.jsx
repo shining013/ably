@@ -47,7 +47,7 @@ const ProductDetailSection = ({ option }) => {
     return (
       <div className="flex flex-col w-full py-5 px-6 gap-6">
         <div className="text-h5 text-gray-70 ">판매자 정보</div>
-        {detailData.map((item) => (
+        {companyData.map((item) => (
           <div className="grid grid-cols-4 gap-y-2">
             <div className="col-span-1 text-body4 text-gray-60">
               {item.name}
