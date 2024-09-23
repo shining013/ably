@@ -3,6 +3,8 @@ import JewelryType from "../components/jewelry/JewelryType";
 import JewelryFilter from "src/components/jewelry/JewelryFilter";
 import TopNavbar from "src/components/common/TopNavbar";
 import TopInfo from "src/components/common/TopInfo";
+import RecommendBox from "src/components/main/RecommendBox";
+import CardList from "src/components/common/CardList";
 
 const jewelryTypes = [
   {
@@ -131,6 +133,8 @@ const JewelryPage = () => {
         <JewelryFilter title="색상"></JewelryFilter>
         <JewelryFilter title="키·연령"></JewelryFilter>
       </div>
+      <RecommendBox />
+      <CardList />
     </div>
   );
 };
