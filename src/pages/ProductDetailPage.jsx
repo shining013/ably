@@ -14,6 +14,7 @@ import { useParams } from "react-router-dom";
 import InquiryTab from "src/components/product/InquiryTab";
 import ProductDetailSection from "src/components/product/ProductDetailSection";
 import ProductSlide from "src/components/product/ProductSlide";
+import ReviewTab from "src/components/product/ReviewTab";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
@@ -74,7 +75,10 @@ const ProductDetailPage = () => {
 
         {/* 상품정보 & 리뷰 & 문의 탭 */}
         <DetailMenuTab selectedTab={selectedTab} onClick={handleSelectedTab} />
-        {selectedTab === "info" && <ProductDetailSection />}
+        {selectedTab === "info" && (
+          <ProductDetailSection option="product" data={productData} />
+        )}
+        {selectedTab === "review" && <ReviewTab productData={productData} />}
         {selectedTab === "inquiry" && (
           <InquiryTab companyId={productData?.companyId} />
         )}
