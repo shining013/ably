@@ -3,7 +3,6 @@ import { useState } from "react";
 import BackButton from "src/components/common/BackButton";
 import { terms } from "src/data/searchTerms";
 import { products } from "src/data/products";
-import Card from "../common/Card";
 import { useNavigate } from "react-router-dom";
 function SearchPageBar() {
   const [search, setSearch] = useState("");
@@ -52,13 +51,13 @@ function SearchPageBar() {
           }}
         >
           <img
-            src="/images/SearchBar1.svg"
+            src="/images/SearchBar1.svg" 
             style={{ width: "20px", height: "20px" }}
             alt=""
           />
           <input
             type="text"
-            placeholder="하나만 사도 무료배송"
+            placeholder="하나만 사도 무료배송" 
             className="w-full bg-transparent outline-none"
             style={{
               fontWeight: "600",
