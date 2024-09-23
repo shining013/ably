@@ -96,6 +96,7 @@ function CategoryList() {
                 className="object-fill justify-items-center"
                 style={{ paddingBottom: "4px" }}
                 src={item.imageSrc}
+                alt=""
               />
             </div>
             <div
