@@ -1,22 +1,105 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import SubProductList from "src/components/subcategory/SubProductList";
 import TopInfo from "src/components/common/TopInfo";
 import TopNavbar from "src/components/common/TopNavbar";
 import RankingBar from "src/components/subcategory/RankingBar";
 import RankingSlide from "src/components/subcategory/RankingSlide";
+import JewelryFilter from "src/components/jewelry/JewelryFilter";
+import { useParams } from "react-router-dom";
+
+import CardList from "src/components/common/CardList";
 
 function SubCategoryPage() {
+  const [selectedButton, setSelectedButton] = useState("all");
+  const { subcategoryId } = useParams();
   return (
     <div>
-      <TopInfo />
-      <TopNavbar title="귀걸이" />
+      <div
+        className="flex top-0 left-0 sticky w-full items-center justify-center flex-col"
+        style={{
+          zIndex: "999",
+        }}
+      >
+        <TopInfo />
+        <TopNavbar title={subcategoryId} />
+      </div>
+
+      {/* <TopInfo /> */}
       {/* 실시간 귀걸이 랭킹 전체보기 바  */}
       <RankingBar />
 
       {/* <SubProductList /> */}
 
       <RankingSlide />
+
+      <div
+        className="m-5"
+        style={{
+          minHeight: "7px",
+          backgroundColor: "rgb(245, 245, 245)",
+        }}
+      ></div>
+
+      <div
+        className="flex gap-7 px-3"
+        style={{
+          borderBottomColor: "rgb(238, 238, 238)",
+          borderBottomStyle: "solid",
+          borderBottomWidth: "0.8px",
+        }}
+      >
+        <div
+          className="cursor-pointer py-3 text-center text-sm"
+          style={{
+            borderBottom: selectedButton === "all" ? "2px solid black" : "none",
+            fontWeight: selectedButton === "all" ? "600" : "400",
+            color:
+              selectedButton === "all"
+                ? "rgb(31, 31, 31)"
+                : "rgb(119, 119, 119)",
+          }}
+          onClick={() => {
+            setSelectedButton("all");
+          }}
+        >
+          전체
+        </div>
+        <div
+          className="cursor-pointer py-3 text-center text-sm"
+          style={{
+            borderBottom:
+              selectedButton === "brand" ? "2px solid black" : "none",
+            fontWeight: selectedButton === "brand" ? "600" : "400",
+            color:
+              selectedButton === "brand"
+                ? "rgb(31, 31, 31)"
+                : "rgb(119, 119, 119)",
+          }}
+          onClick={() => {
+            setSelectedButton("brand");
+          }}
+        >
+          브랜드
+        </div>
+      </div>
+
+      <div
+        className="flex gap-2.5 p-2.5"
+        style={{
+          borderBottomColor: "rgb(238, 238, 238)",
+          borderBottomStyle: "solid",
+          borderBottomWidth: "0.8px",
+        }}
+      >
+        <JewelryFilter title="추천순"></JewelryFilter>
+        <JewelryFilter title="가격"></JewelryFilter>
+        <JewelryFilter title="색상"></JewelryFilter>
+        <JewelryFilter title="키·연령"></JewelryFilter>
+      </div>
+
+      {/* <CardList /> */}
+      <SubProductList />
     </div>
   );
 }
