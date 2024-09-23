@@ -95,12 +95,9 @@ const init = {
 
 const reducer = (state = init, action) => {
   if (action.type === "delete") {
-    const res = action.payload.map((i) => {
-      state.cartItems = state.cartItems.filter((item) => i.id !== item.id);
-    });
-    console.log(res);
-    console.log(action.payload);
-    console.log(state.cartItems);
+    action.payload.map((i) =>
+      state.cartItems = state.cartItems.filter((item) => i.id !== item.id)
+    );
     return {
       ...state,
       totalItem: [],

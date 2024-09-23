@@ -7,7 +7,7 @@ const CartCRUD = () => {
   const totalItem = useSelector((s) => s.totalItem);
   const refresh = useSelector((s) => s.refresh);
   const dispatch = useDispatch();
-  console.log(totalItem);
+
   useEffect(() => {
     setTotalPrice(
       totalItem.reduce((acc, cur) => {
@@ -18,7 +18,7 @@ const CartCRUD = () => {
         );
       }, 0)
     );
-  }, [refresh]);
+  }, [totalItem, refresh]);
 
   // 아이템 삭제
   const deleteItem = (itemChecked) => {
