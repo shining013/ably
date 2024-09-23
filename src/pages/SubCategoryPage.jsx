@@ -13,6 +13,22 @@ import CardList from "src/components/common/CardList";
 function SubCategoryPage() {
   const [selectedButton, setSelectedButton] = useState("all");
   const { subcategoryId } = useParams();
+
+  let category = "";
+  if (subcategoryId === "earing") {
+    category = "귀걸이";
+  } else if (subcategoryId === "ring") {
+    category = "반지";
+  } else if (subcategoryId === "necklace") {
+    category = "목걸이";
+  } else if (subcategoryId === "bracelet") {
+    category = "팔찌";
+  } else if (subcategoryId === "anklet") {
+    category = "발찌";
+  } else if (subcategoryId === "jewerly-box") {
+    category = "보석함";
+  }
+
   return (
     <div>
       <div
@@ -22,7 +38,7 @@ function SubCategoryPage() {
         }}
       >
         <TopInfo />
-        <TopNavbar title={subcategoryId} />
+        <TopNavbar title={category} />
       </div>
 
       {/* <TopInfo /> */}
@@ -31,11 +47,22 @@ function SubCategoryPage() {
 
       {/* <SubProductList /> */}
 
-      <RankingSlide />
+      <div className="ml-3">
+        <RankingSlide subcategoryName={subcategoryId} />
+      </div>
 
-      <div
+      {/* <div
         className="m-5"
         style={{
+          minHeight: "7px",
+          backgroundColor: "rgb(245, 245, 245)",
+        }}
+      ></div> */}
+
+      <div
+        className="mt-6"
+        style={{
+          height: "7px",
           minHeight: "7px",
           backgroundColor: "rgb(245, 245, 245)",
         }}
