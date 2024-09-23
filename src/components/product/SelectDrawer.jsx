@@ -140,7 +140,10 @@ const SelectDrawer = ({ open, onClose }) => {
           선택
         </div>
         <div className="text-body1 text-gray-70 items-center flex flex-row gap-1">
-          총<span className="text-h4 text-pink-30">{totalPrice}원</span>
+          총
+          <span className="text-h4 text-pink-30">
+            {totalPrice.toLocaleString()}원
+          </span>
         </div>
       </div>
     );
