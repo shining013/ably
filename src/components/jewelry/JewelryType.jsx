@@ -6,7 +6,7 @@ function JewelryType({ imgsrc, typeName, path }) {
   return (
     <div>
       <div
-        className="p-3"
+        className="py-3"
         onClick={() => {
           console.log(`${path}`);
           navigate(`${path}`);
