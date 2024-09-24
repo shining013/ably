@@ -93,8 +93,6 @@ function SearchPageBar() {
                         <b
                           onClick={() => {
                             navigate("/product/" + term.id);
-                            console.log(term.id);
-                            console.log(term);
                           }}
                         >
                           {term.name}
