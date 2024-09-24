@@ -106,7 +106,7 @@ function SearchPageBar() {
               ))}
             </ul>
           ) : (
-            search && <p>검색결과 없음</p>
+            search && <p className="container mx-auto">검색결과 없음</p>
           )}
         </div>
       </div>
