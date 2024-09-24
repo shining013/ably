@@ -53,7 +53,7 @@ const JewelryPage = () => {
         <TopInfo />
         <TopNavbar title={"주얼리"} />
       </div>
-      <div className="px-3">
+      <div className="px-2">
         <div className="grid grid-cols-5 p-3 gap-2">
           {jewelryTypes.map((type) => (
             <JewelryType
