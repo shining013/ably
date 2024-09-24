@@ -53,81 +53,83 @@ const JewelryPage = () => {
         <TopInfo />
         <TopNavbar title={"주얼리"} />
       </div>
-
-      <div className="grid grid-cols-5 p-3 gap-5">
-        {jewelryTypes.map((type) => (
-          <JewelryType
-            key={type.imgSrc}
-            imgsrc={type.imgSrc}
-            typeName={type.typeName}
-            path={type.path}
-          />
-        ))}
-      </div>
-      <div
-        style={{
-          height: "1px",
-          minHeight: "1px",
-          backgroundColor: "rgb(238, 238, 238)",
-        }}
-      ></div>
-      <div
-        style={{
-          height: "7px",
-          minHeight: "7px",
-          backgroundColor: "rgb(245, 245, 245)",
-        }}
-      ></div>
-      <div
-        className="flex gap-7 px-3"
-        style={{
-          borderBottomColor: "rgb(238, 238, 238)",
-          borderBottomStyle: "solid",
-          borderBottomWidth: "0.8px",
-        }}
-      >
-        <div
-          className="cursor-pointer py-3 text-center text-sm"
-          style={{
-            borderBottom: selectedButton === "all" ? "2px solid black" : "none",
-            fontWeight: selectedButton === "all" ? "600" : "400",
-            color:
-              selectedButton === "all"
-                ? "rgb(31, 31, 31)"
-                : "rgb(119, 119, 119)",
-          }}
-          onClick={() => {
-            setSelectedButton("all");
-          }}
-        >
-          전체
+      <div className="px-3">
+        <div className="grid grid-cols-5 p-3 gap-5">
+          {jewelryTypes.map((type) => (
+            <JewelryType
+              key={type.imgSrc}
+              imgsrc={type.imgSrc}
+              typeName={type.typeName}
+              path={type.path}
+            />
+          ))}
         </div>
         <div
-          className="cursor-pointer py-3 text-center text-sm"
           style={{
-            borderBottom:
-              selectedButton === "brand" ? "2px solid black" : "none",
-            fontWeight: selectedButton === "brand" ? "600" : "400",
-            color:
-              selectedButton === "brand"
-                ? "rgb(31, 31, 31)"
-                : "rgb(119, 119, 119)",
+            height: "1px",
+            minHeight: "1px",
+            backgroundColor: "rgb(238, 238, 238)",
           }}
-          onClick={() => {
-            setSelectedButton("brand");
+        ></div>
+        <div
+          style={{
+            height: "7px",
+            minHeight: "7px",
+            backgroundColor: "rgb(245, 245, 245)",
+          }}
+        ></div>
+        <div
+          className="flex gap-7 px-3"
+          style={{
+            borderBottomColor: "rgb(238, 238, 238)",
+            borderBottomStyle: "solid",
+            borderBottomWidth: "0.8px",
           }}
         >
-          브랜드
+          <div
+            className="cursor-pointer py-3 text-center text-sm"
+            style={{
+              borderBottom:
+                selectedButton === "all" ? "2px solid black" : "none",
+              fontWeight: selectedButton === "all" ? "600" : "400",
+              color:
+                selectedButton === "all"
+                  ? "rgb(31, 31, 31)"
+                  : "rgb(119, 119, 119)",
+            }}
+            onClick={() => {
+              setSelectedButton("all");
+            }}
+          >
+            전체
+          </div>
+          <div
+            className="cursor-pointer py-3 text-center text-sm"
+            style={{
+              borderBottom:
+                selectedButton === "brand" ? "2px solid black" : "none",
+              fontWeight: selectedButton === "brand" ? "600" : "400",
+              color:
+                selectedButton === "brand"
+                  ? "rgb(31, 31, 31)"
+                  : "rgb(119, 119, 119)",
+            }}
+            onClick={() => {
+              setSelectedButton("brand");
+            }}
+          >
+            브랜드
+          </div>
         </div>
+        <div className="flex gap-3 pt-3 pb-[11px] px-4">
+          <JewelryFilter title="추천순"></JewelryFilter>
+          <JewelryFilter title="가격"></JewelryFilter>
+          <JewelryFilter title="색상"></JewelryFilter>
+          <JewelryFilter title="키·연령"></JewelryFilter>
+        </div>
+        <RecommendBox />
+        <CardList />
       </div>
-      <div className="flex gap-3 pt-3 pb-[11px] px-4">
-        <JewelryFilter title="추천순"></JewelryFilter>
-        <JewelryFilter title="가격"></JewelryFilter>
-        <JewelryFilter title="색상"></JewelryFilter>
-        <JewelryFilter title="키·연령"></JewelryFilter>
-      </div>
-      <RecommendBox />
-      <CardList />
     </div>
   );
 };
