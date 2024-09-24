@@ -54,7 +54,7 @@ const JewelryPage = () => {
         <TopNavbar title={"주얼리"} />
       </div>
       <div className="px-3">
-        <div className="grid grid-cols-5 p-3 gap-5">
+        <div className="grid grid-cols-5 p-3 gap-2">
           {jewelryTypes.map((type) => (
             <JewelryType
               key={type.imgSrc}
