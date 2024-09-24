@@ -17,6 +17,7 @@ const SubProductList = () => {
     <div className="grid grid-cols-2 gap-3 max-w-[600px] w-full px-2">
       {productData?.map((item) => (
         <Card
+          id={item.id}
           imgSrc={item.imgSrc}
           discount={item.discount}
           price={item.price}
