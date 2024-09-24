@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Button from "../common/Button";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -22,14 +22,15 @@ function CartItem({
       dispatch({ type: "deleteTotalItem", payload: productInfo });
     }
   };
-  const check = (itemChecked) => {
+  const check = useCallback((itemChecked) => {
     return totalItem.some((item) => {
       return item.id === itemChecked.id;
     });
-  };
+  }, [totalItem])
 
   useEffect(() => {
-    setIsChecked(check(productInfo));
+    const chk = check(productInfo)
+    setIsChecked(chk);
     setItemAmount(productInfo.amount);
   }, [check, productInfo, refresh]);
 
