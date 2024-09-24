@@ -21,20 +21,18 @@ function SearchPageBar() {
     const inputText = e.target.value;
     setSearch(inputText);
     if (inputText.trim()) {
-      const filtered = products.filter((item) =>
-        item.name.includes(inputText)
-      );
+      const filtered = products.filter((item) => item.name.includes(inputText));
       const combinedResults = [...filtered];
       setFilteredTerms(combinedResults);
     } else {
       setFilteredTerms([]);
     }
   };
-  
+
   return (
     <>
       <div
-        className="flex w-full justify-center items-center bg-white relative"
+        className="flex w-full py-3 justify-center items-center bg-white relative"
         style={{ paddingTop: "2px" }}
       >
         <BackButton className="flex justify-center" />
@@ -51,13 +49,13 @@ function SearchPageBar() {
           }}
         >
           <img
-            src="/images/SearchBar1.svg" 
+            src="/images/SearchBar1.svg"
             style={{ width: "20px", height: "20px" }}
             alt=""
           />
           <input
             type="text"
-            placeholder="하나만 사도 무료배송" 
+            placeholder="하나만 사도 무료배송"
             className="w-full bg-transparent outline-none"
             style={{
               fontWeight: "600",
@@ -78,14 +76,17 @@ function SearchPageBar() {
         </div>
       </div>
       <div>
-        <div className="block" style={{ width: "600px" }}>
+        <div
+          className="block justify-center items-center"
+          style={{ width: "600px" }}
+        >
           {filteredTerms.length > 0 ? (
             <ul>
               {filteredTerms.map((term, i) => (
-                <div className="cursor-pointer p-4 font-bold flex container w-full">
+                <div className="container mx-auto cursor-pointer p-4 font-bold flex w-full">
                   <li key={i} className="flex justify-start items-start">
                     <p
-                      className="m-0 gray-70 block "
+                      className="m-0 gray-70 block"
                       style={{ fontWeight: "400", lineHeight: "20px" }}
                     >
                       <span key={term.id}>
@@ -105,7 +106,7 @@ function SearchPageBar() {
               ))}
             </ul>
           ) : (
-            search && <p>검색결과 없음</p>
+            search && <p className="container mx-auto">검색결과 없음</p>
           )}
         </div>
       </div>

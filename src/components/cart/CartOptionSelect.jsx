@@ -13,7 +13,6 @@ const CartOptionSelect = ({ open, onClose, item }) => {
 
   useEffect(() => {
     setSelectedOption({ option1: item.option1, option2: item.option2 });
-    console.log(selectedOption);
   }, [item, open]);
 
   const changeItemOption = (name, option) => {

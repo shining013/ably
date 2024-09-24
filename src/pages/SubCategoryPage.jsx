@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
 import SubProductList from "src/components/subcategory/SubProductList";
 import TopInfo from "src/components/common/TopInfo";
@@ -23,7 +23,7 @@ function SubCategoryPage() {
     category = "팔찌";
   } else if (subcategoryId === "anklet") {
     category = "발찌";
-  } else if (subcategoryId === "jewerly-box") {
+  } else if (subcategoryId === "jewelry-box") {
     category = "보석함";
   }
 
